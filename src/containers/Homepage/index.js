@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { Container, Genesys, PlanetWrapper, Section } from "./styles";
 import Navbar from "../../components/Navbar";
-import { Scene } from "../../components/Planet";
+import { Scene } from "../../components/Scene";
 import { Mint } from "../Mint";
 import { Synopsis } from "../Synopsis";
 
