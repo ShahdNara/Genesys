@@ -7,8 +7,8 @@ import { Synopsis } from "../Synopsis";
 
 const sections = {
     // 0: <Mint />,
-    0: <Mint/>,
-    1: <Synopsis/>
+    0: <Mint/>
+    // 1: <Synopsis/>
 }
 
 
@@ -31,7 +31,7 @@ function HomePage() {
 
     return(
         <Container onWheel={onWheel}>
-            <Navbar onClick={handleClick}/>
+            {/* <Navbar onClick={handleClick}/> */}
             <Section>
                 {sections[tab]}
             </Section>

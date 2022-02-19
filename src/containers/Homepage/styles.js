@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Flex, Box, Image } from "reflexbox/styled-components";
-import bg from "../../media/bg1.png";
+import bg from "../../media/bg3.png";
 
 export const Container = styled(Flex)`
   height: 100vh;

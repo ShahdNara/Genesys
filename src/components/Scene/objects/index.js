@@ -5,7 +5,7 @@ import { BufferGeometry, ShaderMaterial, Vector3, BufferAttribute, RedFormat, Ad
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader';
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
-import mars from "../../../media/mars.jpg"
+import mars from "../../../media/mars2.jpg"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass";
@@ -128,7 +128,7 @@ export function Particles({ pointCount }) {
     const primitiveProps = {
       object: geometry,
       position: pos,
-      scale: 1
+      scale: 7
     };
 
     useEffect(() => {
@@ -141,21 +141,6 @@ export function Particles({ pointCount }) {
         clearTimeout(timeout);
       };
     }, [counter]);
-
-    // useFrame(() => {
-    //   let targetVector = new Vector3(pos[0], toggle ? pos[1] + Math.random()*10 : pos[1] - Math.random()*10, toggle ? pos[2]+Math.random()*10+5 : pos[2]-Math.random()*10-8)
-		// 	const direction = new Vector3()
-		// 	const { position } = mesh.current
-		// 	//console.log(position)
-		// 	direction.subVectors(targetVector, position)
-		// 	const vector = direction.multiplyScalar(0.001, 0.001, 0.001)
-
-    //   mesh.current.position.x += vector.x
-		// 	mesh.current.position.y += vector.y
-		// 	mesh.current.position.z += vector.z
-
-    //   //mesh.current.rotation.y += 0.2
-    // })
 
     return (
       <mesh
@@ -269,11 +254,43 @@ export function Particles({ pointCount }) {
   }
 
   export function Spaceships({pos,...props}) {
-    const spaceship_arr = [<Spaceship position={[pos[0]+100, pos[1]-150, pos[2]-40]} resetOnTab={props.resetOnTab}/>, <Spaceship position={[pos[0]+50, pos[1]-60, pos[2]-150]} resetOnTab={props.resetOnTab}/>, <Spaceship position={[pos[0], pos[1]-150, pos[2]-300]} resetOnTab={props.resetOnTab}/>]
+    const p1 = [pos[0]-220, pos[1]-150, pos[2]+100] // left one
+    const p2 = [pos[0]-10, pos[1]-30, pos[2] -80] // middle one
+    const p3 = [pos[0]+100, pos[1]-150, pos[2]-300] // right one
+    const p4 = [pos[0]-100, pos[1]-120, pos[2]-100] // right one
+    const spaceship_arr = [<Spaceship position={p1} resetOnTab={props.resetOnTab}/>, <Spaceship position={p2} resetOnTab={props.resetOnTab}/>, <Spaceship position={p3} resetOnTab={props.resetOnTab}/>, <Spaceship position={p4} resetOnTab={props.resetOnTab}/>]
     return(spaceship_arr.map((c, k) =><mesh position={pos} key={k}>{c}</mesh>))
   }
 
-  export function Saturn({pos}) {
+  export function Spacestation({pos}) {
+    const obj="battleship/scene.gltf"
+    // const image="sun/sun.jpeg"
+
+    const mesh = useRef();
+    // // const materialLoaded = useLoader(MTLLoader, mtl);
+    // const texture = useLoader(TextureLoader, image)
+    const object = useLoader(GLTFLoader, obj);
+
+    useFrame(() => {
+      // mesh.current.rotation.y -= 0.00005
+
+    })
+    useEffect(() => {
+      mesh.current.rotation.y = -Math.PI/4;
+      mesh.current.rotation.x = Math.PI;
+
+    })
+    return (
+      <mesh
+        ref={mesh}
+        position={pos}
+      >
+        <primitive object={object.scene} scale={8}/>
+      </mesh>
+    );
+  }
+
+  export function Saturn2({pos}) {
     
     return (
       <mesh>
@@ -299,28 +316,42 @@ export function Particles({ pointCount }) {
       </>
     )
   }
-  // export function Sun({pos, radius}) {
-  //   const ref = useRef()
 
-  //   return (
-  //     <mesh ref={ref} position={pos} >
-  //         {/* <pointLight color="#EEC787" intensity={8} position={[pos[0], pos[1]+60, pos[2]]} /> */}
-  //         <meshStandardMaterial color="yellow" roughness={1} />
-  //         <sphereGeometry args={[radius, 40, 40]} />
-  //     </mesh>
-  //   );
-  // }
+  export function Saturn({pos, ...props}) {
+    const obj="saturn/scene.gltf"
+    // const image="sun/sun.jpeg"
+
+    const mesh = useRef();
+    // // const materialLoaded = useLoader(MTLLoader, mtl);
+    // const texture = useLoader(TextureLoader, image)
+    const object = useLoader(GLTFLoader, obj);
+
+    useFrame(() => {
+      mesh.current.rotation.y -= 0.00005
+
+    })
+    useEffect(() => {
+      mesh.current.rotation.y = 0
+
+    }, [props.resetOnTab])
+    return (
+      <mesh
+        ref={mesh}
+        position={pos}
+      >
+        {/* <ambientLight intensity={0.5} /> */}
+        <primitive object={object.scene} scale={1}/>
+      </mesh>
+    );
+  }
+
 
   export function Sun({pos, radius}) {
     const ref = useRef()
     
     return (
       <mesh ref={ref} position={pos} >
-          {/* <pointLight color="#EEC787" intensity={8} position={[pos[0], pos[1]+60, pos[2]]} /> */}
-          
           <Glow />
-          {/* <meshLambertMaterial color="white" roughness={1} receiveShadow={false}/>
-          <sphereGeometry args={[radius, 40, 40]} /> */}
       </mesh>
     );
   }
@@ -335,22 +366,36 @@ export function Particles({ pointCount }) {
     )
   }
 
-  export function Glow2() {
-    const texture = useLoader(TextureLoader, 'glow.png')
-    return (
-      <mesh>
-        <mesh>
-          <shaderMaterial uniforms={{ 
-                                    "c":   { type: "f", value: 0.5 },
-                                    "p":   { type: "f", value: 4.0 }
-                                  }} />
-          <sphereGeometry args={[3, 40, 40]} />
-        </mesh>
-        <mesh>
-          <meshBasicMaterial color="black" />
-          <sphereGeometry args={[3, 40, 40]} />
-        </mesh>
-        
-      </mesh>
-    )
+  export const Belt = ({ center, number, r_max, r_min }) => {
+    const asteroids_arr = []
+    const asteroids = useMemo(() => {
+      const temp = []
+      for (let i = 0; i < number; i++) {
+        // const theta = 360 * Math.random(0, Math.PI);
+        // const A = 2/(r_max*r_max - r_min*r_min);
+        // const r = Math.sqrt(2*Math.random()/A + r_min*r_min)
+        // const x = -Math.abs(r * Math.cos(theta)) + center[0]/2 -10;
+        // const y = r * Math.sin(theta) + center[2]/2;
+        // const z = x/2.1 + Math.random();
+        const x = center[0];
+        const y = center[1];
+        const z = center[2];
+        const type = Math.ceil(Math.random() * 4);
+        temp.push({ x, z, y, type })
+      }
+      return temp
+    }, [number])
+
+    asteroids.forEach((asteroid, i) => {
+      let { x, z, y, type } = asteroid
+      asteroids_arr.push(
+        <Asteroid
+          obj={`asteroids/asteroid${type}.obj`}
+          mtl={`asteroids/asteroid${type}.mtl`}
+          image={`asteroids/asteroid${type}.png`}
+          pos={[x, z, y]}
+        />)
+    })
+
+    return(asteroids_arr.map((c, k) =><mesh key={k}>{c}</mesh>))
   }

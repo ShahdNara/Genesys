@@ -8,9 +8,9 @@ CameraControls.install({ THREE })
 const cam_pos = {
 	// 0: [0, 20, 50], // Sun
 	0: [0, 12, 112], // Mars
-	1: [-100, 12, 115], // Spaceships
-	2: [-50, 180, 230], // Spacecraft
-	3: [-200, 300, 430] // Saturn
+	1: [-100, 12, 200], // Spaceships
+	2: [-807, 302, 228], // Spacecraft
+	3: [-2570, 1840, -100] // Saturn
 }
 
 const deg2rad = degrees => degrees * (Math.PI / 180);
@@ -33,11 +33,21 @@ const ExtendedCameraControls = (props, ref: ((instance: CameraControls) => void)
     let position = cam_pos[props.tab]
     // console.log("position: ", position)
     controls.reset(true)
-    controls.moveTo(position[0], position[1], position[2], true)
+    
     if (props.tab == 0) {
+      controls.moveTo(position[0], position[1], position[2], true)
       controls.rotate(0, 0, true)
     }
     if (props.tab == 1) {
+      controls.moveTo(position[0], position[1], position[2], true)
+      controls.rotate(180 * THREE.MathUtils.DEG2RAD, 0, true)
+    }
+    if (props.tab == 2) {
+      controls.moveTo(position[0], position[1], position[2], true)
+      controls.rotate(170 * THREE.MathUtils.DEG2RAD, 0, true)
+    }
+    if (props.tab == 3) {
+      controls.moveTo(position[0], position[1], position[2], true)
       controls.rotate(180 * THREE.MathUtils.DEG2RAD, 0, true)
     }
     return () => controls.dispose()

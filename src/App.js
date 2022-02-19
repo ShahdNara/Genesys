@@ -19,7 +19,7 @@ function App() {
   return (
     <div>
       <StarfieldAnimation
-                numParticles={0}
+                numParticles={20}
                 style={{
                     position: 'absolute',
                     zIndex: 0,
