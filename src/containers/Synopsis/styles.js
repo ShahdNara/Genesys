@@ -2,11 +2,12 @@ import styled from "styled-components";
 import { Flex, Box, Image } from "reflexbox/styled-components";
 
 export const Container = styled(Flex)`
-  height: 75%;
-  width: 80%;
-  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  // background-color:red;
+  // justify-content: space-between;
   flex-direction: column;
-  padding-top: 40px;
+  // padding-top: 40px;
 
 //   border: 2px solid white;
 //   border-radius: 10px;

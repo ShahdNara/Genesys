@@ -6,11 +6,11 @@ import CameraControls from 'camera-controls'
 CameraControls.install({ THREE })
 
 const cam_pos = {
-	// 0: [0, 20, 50], // Sun
 	0: [0, 12, 112], // Mars
 	1: [-100, 12, 200], // Spaceships
 	2: [-807, 302, 228], // Spacecraft
-	3: [-2570, 1840, -100] // Saturn
+  3: [-880, 302, 228], // Blank space
+	4: [-2590, 1825, -100] // Saturn
 }
 
 const deg2rad = degrees => degrees * (Math.PI / 180);
@@ -18,7 +18,7 @@ const DEG45 = Math.PI * 0.25;
 const DEG90 = Math.PI * 0.5;
 const DEG180 = Math.PI;
 
-const ExtendedCameraControls = (props, ref: ((instance: CameraControls) => void) | React.RefObject<CameraControls> | null | undefined) => {
+const ExtendedCameraControls = (props, ref) => {
   // const set = useThree((state) => state.set)
   const camera = useThree((state) => state.camera)
   const gl = useThree((state) => state.gl)
@@ -47,6 +47,10 @@ const ExtendedCameraControls = (props, ref: ((instance: CameraControls) => void)
       controls.rotate(170 * THREE.MathUtils.DEG2RAD, 0, true)
     }
     if (props.tab == 3) {
+      controls.moveTo(position[0], position[1], position[2], true)
+      controls.rotate(170 * THREE.MathUtils.DEG2RAD, 0, true)
+    }
+    if (props.tab == 4) {
       controls.moveTo(position[0], position[1], position[2], true)
       controls.rotate(180 * THREE.MathUtils.DEG2RAD, 0, true)
     }

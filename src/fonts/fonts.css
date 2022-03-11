@@ -10,3 +10,15 @@
     font-family: "Polaris";
     src: url('./Polaris.otf');
 }
+@font-face {
+    font-family: "SourceCodePro-Black";
+    src: url('./SourceCodePro-Light.ttf');
+}
+@font-face {
+    font-family: "Teko-Bold";
+    src: url('./Teko-Bold.ttf');
+}
+@font-face {
+    font-family: "Teko";
+    src: url('./Teko-Regular.ttf');
+}
