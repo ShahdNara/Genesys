@@ -17,7 +17,7 @@ html, body {
     text-transform: uppercase;
     letter-spacing: 1.3px;
     font-weight: 700;
-    color: white;
+    color: green;
     background: red;
   background: linear-gradient(90deg, red 0%, #960507 100%);
     border: none;
@@ -49,19 +49,6 @@ html, body {
   
   button:hover::before, button:focus::before {
     opacity: 1;
-  }
-  
-  button::after {
-    content: '';
-    width: 10px; height: 30px;
-    border-radius: 100%;
-    border: 4px solid #960507;
-    position: absolute;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: ring 1.5s infinite;
   }
   
   button:hover::after, button:focus::after {
@@ -100,18 +87,6 @@ body {
 }
 .arrow-second {
     animation: arrow-movement 2s 1s ease-in-out infinite;
-}
-
-.arrow:before,
-.arrow:after {
-    background: #fff;
-    content: '';
-    display: block;
-    height: 3px; 
-    position: relative;
-        top: 0;
-        left: 0;
-    width: 30px;
 }
 
 .arrow:before {
@@ -154,7 +129,6 @@ body {
 	margin: 0 auto;
 	width: 24px;
 	height: 100px;
-	margin-top: 125px;
 }
 
 
@@ -167,8 +141,8 @@ body {
   -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
   transform: rotate(45deg);
    
-  border-right: 2px solid white;
-  border-bottom: 2px solid white;
+  border-right: 2px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
   margin: 0 0 3px 4px;
   
   width: 16px;
@@ -229,7 +203,7 @@ body {
   width: 24px;
   border-radius: 14px;
   transform: none;
-  border: 2px solid white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
   top: 170px;
 }
 
@@ -238,12 +212,11 @@ body {
   width: 2px;
   display: block;
   margin: 5px auto;
-  background: white;
+  background: rgba(255, 255, 255, 0.4);
   position: relative;
   
   height: 4px;
   width: 4px;
-  border: 2px solid #fff;
   -webkit-border-radius: 8px;
           border-radius: 8px;
 }

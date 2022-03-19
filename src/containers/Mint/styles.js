@@ -2,24 +2,34 @@ import styled from "styled-components";
 import { Flex, Box, Image } from "reflexbox/styled-components";
 
 export const Container = styled(Flex)`
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-direction: column;
-  // margin-bottom: 170px;
-  // background-color: red;
-  height: 100%;
+  height: 90%;
+  overflow: hidden;
+  @media (max-width: 450px) {
+    justify-content: center;
+  }
 `;
 
 export const Genyses = styled(Flex)`
   font-family: Polaris;
   font-size: 100px;
   color: white;
-  text-shadow: 2px 2px 9px red;
   z-index: 2;
-  align-self: center;
-  height: 80%;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
+  height: 60%;
+  align-items: flex-end;
+  @media (max-width: 1000px) {
+    font-size: 90px;
+  }
+  @media (max-width: 800px) {
+    font-size: 80px;
+  }
+  @media (max-width: 600px) {
+    font-size: 70px;
+  }
+  @media (max-width: 450px) {
+    font-size: 55px;
+  }
 `
 export const Button = styled.button`
   width: 50%;
@@ -30,14 +40,13 @@ export const Button = styled.button`
 export const ArrowsWrapper = styled(Flex)`
   align-self: center;
   width: 100%;
-  height: 20%;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: flex-end;
+  flex-direction: column;  
+  padding-top: 20px;
 `
 export const Arrows = styled.div`
-
   position: relative;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 export const Scroll = styled(Flex)`
@@ -52,4 +61,13 @@ export const Scroll = styled(Flex)`
 
 export const Wrapper = styled(Flex)`
   position: relative;
+`;
+
+export const Subtitle = styled(Flex)`
+  font-family: Polaris;
+  font-size: 20px;
+  color: rgba(255,255,255,0.6);
+  z-index: 2;
+  align-self: center;
+  margin-bottom: 30px;
 `;

@@ -213,7 +213,6 @@ export function Particles({ pointCount }) {
   export function Spaceship({position,...props}) {
     const [geometry, setGeometry] = useState();
     const obj="spaceship/scene.gltf"
-    console.log(position)
     const mesh = useRef();
     const object = useLoader(GLTFLoader, obj);
 
@@ -238,7 +237,6 @@ export function Particles({ pointCount }) {
 
     useEffect(() => {
       mesh.current.rotation.y = -1.7
-      console.log(props.resetOnTab)
       if (props.resetOnTab == 1) {
         mesh.current.position.z = position[2]
       }
@@ -254,10 +252,10 @@ export function Particles({ pointCount }) {
   }
 
   export function Spaceships({pos,...props}) {
-    const p1 = [pos[0]-220, pos[1]-150, pos[2]+100] // left one
-    const p2 = [pos[0]-10, pos[1]-30, pos[2] -80] // middle one
-    const p3 = [pos[0]+100, pos[1]-150, pos[2]-300] // right one
-    const p4 = [pos[0]-100, pos[1]-120, pos[2]-100] // right one
+    const p1 = [pos[0]-220, pos[1]-10, pos[2]+100] // left one
+    const p2 = [pos[0]+100, pos[1]-30, pos[2] -80] // middle one
+    const p3 = [pos[0]+100, pos[1]-10, pos[2]-300] // right one
+    const p4 = [pos[0]-100, pos[1]-10, pos[2]-100] // right one
     const spaceship_arr = [<Spaceship position={p1} resetOnTab={props.resetOnTab}/>, <Spaceship position={p2} resetOnTab={props.resetOnTab}/>, <Spaceship position={p3} resetOnTab={props.resetOnTab}/>, <Spaceship position={p4} resetOnTab={props.resetOnTab}/>]
     return(spaceship_arr.map((c, k) =><mesh position={pos} key={k}>{c}</mesh>))
   }
@@ -318,29 +316,30 @@ export function Particles({ pointCount }) {
   }
 
   export function Saturn({pos, ...props}) {
-    const obj="saturn/scene.gltf"
+    // const obj="saturn/scene.gltf"
     // const image="sun/sun.jpeg"
-
+    const obj="saturn2/scene.gltf"
+    
     const mesh = useRef();
     // // const materialLoaded = useLoader(MTLLoader, mtl);
     // const texture = useLoader(TextureLoader, image)
     const object = useLoader(GLTFLoader, obj);
 
     useFrame(() => {
-      mesh.current.rotation.y -= 0.00005
+      // mesh.current.rotation.y -= 0.0005
 
     })
     useEffect(() => {
-      mesh.current.rotation.y = 0
-
-    }, [props.resetOnTab])
+      // mesh.current.rotation.x = 0.006;
+      mesh.current.rotation.z = 0.1;
+    })
     return (
       <mesh
         ref={mesh}
         position={pos}
       >
         {/* <ambientLight intensity={0.5} /> */}
-        <primitive object={object.scene} scale={1}/>
+        <primitive object={object.scene} scale={11}/>
       </mesh>
     );
   }

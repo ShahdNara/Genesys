@@ -31,8 +31,8 @@ export const PlanetWrapper = styled.div`
 
 export const Section = styled(Flex)`
   align-items: center;
-  height: 80%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
   z-index: 1;
   flex-direction: column;
   justify-content: center;
