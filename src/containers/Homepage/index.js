@@ -34,6 +34,7 @@ function HomePage() {
     }
 
     console.log(tab)
+    if(tab != 5) {
     return(
         <Container onWheel={onWheel}>
             <Navbar onClick={handleClick}/>
@@ -45,7 +46,8 @@ function HomePage() {
             </PlanetWrapper>
             <AudioPlayer/>
         </Container>
-    )
+    ) }
+    else{ return(<><Navbar onClick={handleClick}/></>)}
     
 }
 

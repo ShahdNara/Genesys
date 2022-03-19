@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Genyses, Container, Section, ArrowsWrapper, Arrows, Scroll, Wrapper, Subtitle } from "./styles";
+import { Button, Genyses, Container, Section, ArrowsWrapper, Arrows, Scroll, Wrapper } from "./styles";
 import "./styles.css"
 
 export const Mint = () => {
@@ -7,8 +7,7 @@ export const Mint = () => {
         <Container>
             <Genyses>Genyses</Genyses>
             <ArrowsWrapper>
-                <Subtitle>Coming soon...</Subtitle>
-                {/* <Wrapper>
+                <Wrapper>
                     <div class="mouse_scroll">
                         <div class="mouse">
                             <div class="wheel"></div>
@@ -19,7 +18,7 @@ export const Mint = () => {
                             <span class="m_scroll_arrows trei"></span>
                         </div>
                     </div>
-                </Wrapper> */}
+                </Wrapper>
             </ArrowsWrapper>
         </Container>
     )
