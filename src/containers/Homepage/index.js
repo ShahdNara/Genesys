@@ -12,16 +12,15 @@ import AudioPlayer from "../../components/AudioPlayer";
 function HomePage() {
 
     const [tab, setTab] = useState(0);
-    const handleClick = (e) => {
+    const handleClick  = (e) => {
         setTab(e);
     }
     const sections = {
-        0: <Mint/>
-
-        // 1: <Synopsis/>,
-        // 2: <Characters next={() => setTab(3)} back={() => setTab(1)}/>,
-        // 3: <Roadmap next={() => setTab(4)} back={() => setTab(2)}/>,
-        // 4: <Team />
+        0: <Mint/>,
+        1: <Synopsis/>,
+        2: <Characters next={() => setTab(3)} back={() => setTab(1)}/>,
+        3: <Roadmap next={() => setTab(4)} back={() => setTab(2)}/>,
+        4: <Team />
     }
 
     const onWheel = (e) => {
@@ -36,15 +35,15 @@ function HomePage() {
 
     console.log(tab)
     return(
-        <Container>
-            {/* <Navbar onClick={handleClick}/> */}
+        <Container onWheel={onWheel}>
+            <Navbar onClick={handleClick}/>
             <Section>
                 {sections[tab]}
             </Section>
             <PlanetWrapper>
                 <Scene tab={tab} />
             </PlanetWrapper>
-            {/* <AudioPlayer/> */}
+            <AudioPlayer/>
         </Container>
     )
     
