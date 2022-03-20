@@ -16,12 +16,12 @@ export const Container = styled(Flex)`
 `;
 
 export const Text = styled(Flex)`
-  color: ${props => (props.active ? "#E9C82D" : "#e2e2e2")};
+  color: #e2e2e2;
   font-size: 30px;
   font-family: 'Agency FB';
   cursor: pointer;
   &:hover {
-    color: #75EB98;
+    color: #E3DDA8;
   }
   font-height: 10px;
 `;
@@ -31,7 +31,6 @@ export const StyledMenu = styled.nav`
   display: flex;
   width: 300px;
   background: rgba(0, 0, 0, 0.3);
-  //#rgba(0, 0, 0, 0.3)
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
   height: 100%;
   text-align: left;

@@ -26,8 +26,9 @@ export const Team = () => {
             <Row>
                 <Item src={Person} name="Adham" role="Managing Director"/>
                 <Item src={Person} name="Jason" role="Creative Director"/>
-                <Item src={Person} name="Sherif" role="Lead Artist"/>
                 <Item src={Person} name="Shahd" role="Lead Developer"/>
+                <Item src={Person} name="Sherif" role="Lead Artist"/>
+
             </Row>
             <Row>
                 <Item src={Person} name="Jeff" role="Marketing Officer"/>
