@@ -4,9 +4,9 @@ import { Flex, Box, Image } from "reflexbox/styled-components";
 export const Container = styled(Flex)`
   justify-content: flex-end;
   flex-direction: column;
-  height: 90%;
+  height: 90vh;
   overflow: hidden;
-  @media (max-width: 450px) {
+  @media (max-width: 650px) {
     justify-content: center;
   }
 `;
@@ -16,7 +16,7 @@ export const Genyses = styled(Flex)`
   font-size: 100px;
   color: white;
   z-index: 2;
-  height: 60%;
+  height: 60vh;
   align-items: flex-end;
   @media (max-width: 1000px) {
     font-size: 90px;
@@ -40,7 +40,7 @@ export const Button = styled.button`
 export const ArrowsWrapper = styled(Flex)`
   align-self: center;
   width: 100%;
-  justify-content: flex-end;
+  justify-content: center;
   flex-direction: column;  
   padding-top: 20px;
 `

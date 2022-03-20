@@ -12,11 +12,21 @@ import AudioPlayer from "../../components/AudioPlayer";
 function HomePage() {
 
     const [tab, setTab] = useState(0);
+    const [width, setWidth]   = useState(window.innerWidth);
+
     const handleClick = (e) => {
         setTab(e);
     }
+    const updateDimensions = () => {
+        setWidth(window.innerWidth);
+    }
+    useEffect(() => {
+        window.addEventListener("resize", updateDimensions);
+        return () => window.removeEventListener("resize", updateDimensions);
+    }, []);
+
     const sections = {
-        0: <Mint/>
+        0: <Mint width={width}/>
 
         // 1: <Synopsis/>,
         // 2: <Characters next={() => setTab(3)} back={() => setTab(1)}/>,
@@ -44,7 +54,7 @@ function HomePage() {
             <PlanetWrapper>
                 <Scene tab={tab} />
             </PlanetWrapper>
-            <AudioPlayer/>
+            <AudioPlayer visible={width >= 650}/>
         </Container>
     )
     

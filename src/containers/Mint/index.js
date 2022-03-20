@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Button, Genyses, Container, Section, ArrowsWrapper, Arrows, Scroll, Wrapper, Subtitle } from "./styles";
 import "./styles.css"
+import AudioPlayer from "../../components/AudioPlayer";
 
-export const Mint = () => {
+export const Mint = (props) => {
     return(
         <Container>
             <Genyses>Genyses</Genyses>
             <ArrowsWrapper>
                 <Subtitle>Coming soon...</Subtitle>
+                <AudioPlayer visible={props.width <= 650}/>
                 {/* <Wrapper>
                     <div class="mouse_scroll">
                         <div class="mouse">

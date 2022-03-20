@@ -2,13 +2,14 @@ import styled from "styled-components";
 import { Flex } from "reflexbox/styled-components";
 
 export const Container = styled(Flex)`
-	position: absolute;
+	display: ${props=>props.visible || "none"};
+	position: relative;
 	height: 56px;
 	width: ${props=> props.expand ? "250px" : "114px"};
 	align-self: flex-start;
 	border-radius: 5px;
 	margin: 30px;
-	bottom: 0px;
+	//bottom: 0px;
 	flex-direction: ${props=> props.expand ? "row" : "column"};;
 	background: rgba(66,155,184, 0.2);
 	box-shadow: 0 0 5px #3bc5cc;
@@ -16,6 +17,7 @@ export const Container = styled(Flex)`
 	z-index: 1;
 	@media (max-width: 650px) {
 		align-self: center;
+		margin: 0;
 	}
 	transition-property: width;
   	transition-duration: 0.2s;

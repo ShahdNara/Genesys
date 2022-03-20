@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Play, PlayArrow, Logo, Dot, Expand, Column, Title, Bar, ProgBar } from "./styles";
+import { Container, Play, PlayArrow, Logo, Dot, Expand, Column, Title, Bar, ProgBar, Wrapper } from "./styles";
 import PlayIcon from '../../media/playArrow2.png'
 import PauseIcon from '../../media/pause.png'
 import soundtrack from '../../media/soundtrack.mp4';
@@ -27,7 +27,7 @@ const useAudio = url => {
     return [playing, toggle];
   };
   
-function AudioPlayer() {
+function AudioPlayer(props) {
     const [playing, toggle] = useAudio(soundtrack);
     const [open, setOpen] = useState(false);
     const [timer, setTimer] = useState(0);
@@ -60,7 +60,8 @@ function AudioPlayer() {
     }
 
     return(
-    <Container expand={open}>
+      // <Wrapper>
+    <Container expand={open} visible={props.visible}>
       <Play>
         <PlayArrow src={playing ? PauseIcon : PlayIcon} onClick={toggle} active={playing}/>
       </Play>
@@ -71,7 +72,9 @@ function AudioPlayer() {
         <Bar />
         <ProgBar width={timer/totalSeconds*100}/>
       </Column>
-    </Container>)
+    </Container>
+    // </Wrapper>
+    )
 }
 
 export default AudioPlayer
