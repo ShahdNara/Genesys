@@ -44,7 +44,7 @@ function HomePage() {
             <PlanetWrapper>
                 <Scene tab={tab} />
             </PlanetWrapper>
-            {/* <AudioPlayer/> */}
+            <AudioPlayer/>
         </Container>
     )
     
