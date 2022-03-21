@@ -5,12 +5,33 @@ import { Scene } from "../../components/Scene";
 import { Mint } from "../Mint";
 import { Synopsis } from "../Synopsis";
 import { Characters } from "../Characters";
+import { FAQ } from "../FAQ";
 import Roadmap from "../Roadmap";
 import { Team } from "../Team";
 import AudioPlayer from "../../components/AudioPlayer";
 
 function HomePage() {
+    const handleScroll = (e) => {
+        console.log("eh")
+        if ((tab == 0) || (tab == 1) || (tab == 4)){
+            if (e.nativeEvent.wheelDelta > 0) {
+            setTab(tab == 0 ? 0 : tab - 1)
+        } else {
+            setTab(tab == 4 ? 4 : tab + 1)
+            }
+        }
+    }
 
+    useEffect(() => {
+        // initiate the event handler
+        window.addEventListener("scroll", handleScroll);
+    
+        // this will clean up the event every time the component is re-rendered
+        return function cleanup() {
+          window.removeEventListener("scroll", handleScroll);
+        }
+    })
+    
     const [tab, setTab] = useState(0);
     const handleClick  = (e) => {
         setTab(e);
@@ -36,7 +57,7 @@ function HomePage() {
     console.log(tab)
     if(tab != 5) {
     return(
-        <Container onWheel={onWheel}>
+        <Container onWheel={onWheel} onScroll={onWheel}>
             <Navbar onClick={handleClick}/>
             <Section>
                 {sections[tab]}
@@ -47,7 +68,13 @@ function HomePage() {
             <AudioPlayer/>
         </Container>
     ) }
-    else{ return(<><Navbar onClick={handleClick}/></>)}
+    else{ return(
+        <Container>
+            <Navbar onClick={handleClick}/>
+            <Section>
+                <FAQ />
+            </Section>
+        </Container>)}
     
 }
 

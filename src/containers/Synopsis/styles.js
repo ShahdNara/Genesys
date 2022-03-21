@@ -33,8 +33,12 @@ export const BigText = styled(Flex)`
 	font-family: Polaris;
 	font-size: 50px;
 	color: white;
-	position: fixed;
+	position: absolute;
 	margin-left: 90px;
-	margin-top: 30px;
+	top: 5%;
   z-index: 2;
+  line-height: 34px;
+  @media (max-width: 920px) {
+    font-size: 40px;
+  }
 `

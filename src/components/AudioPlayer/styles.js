@@ -14,8 +14,8 @@ export const Container = styled(Flex)`
 	box-shadow: 0 0 5px #3bc5cc;
   	border-radius: 5px;
 	z-index: 1;
-	@media (max-width: 650px) {
-		align-self: center;
+	@media (max-width: 920px) {
+		display: none;
 	}
 	transition-property: width;
   	transition-duration: 0.2s;
