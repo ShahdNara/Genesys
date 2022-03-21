@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Flex } from "reflexbox/styled-components";
 
 export const Container = styled(Flex)`
-	display: ${props=>props.visible || "none"};
 	position: relative;
 	height: 56px;
 	width: ${props=> props.expand ? "250px" : "114px"};
@@ -16,8 +15,7 @@ export const Container = styled(Flex)`
   	border-radius: 5px;
 	z-index: 1;
 	@media (max-width: 650px) {
-		align-self: center;
-		margin: 0;
+		display: none;
 	}
 	transition-property: width;
   	transition-duration: 0.2s;

@@ -9,7 +9,6 @@ export const Mint = (props) => {
             <Genyses>Genyses</Genyses>
             <ArrowsWrapper>
                 <Subtitle>Coming soon...</Subtitle>
-                <AudioPlayer visible={props.width <= 650}/>
                 {/* <Wrapper>
                     <div class="mouse_scroll">
                         <div class="mouse">
