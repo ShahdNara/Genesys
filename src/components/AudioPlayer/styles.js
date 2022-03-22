@@ -49,7 +49,7 @@ export const Logo = styled.img`
 	width: 40px;
 	align-self: ${props=> props.expand ? "flex-start" : "center"};
 	margin-top: 3px;
-	margin-left: ${props=> props.expand ? "10px" : ""};
+	margin-left: ${props=> props.expand ? "10px" : "-20px"};
 	transition-property: margin-left;
   	transition-duration: 0.2s;
 `

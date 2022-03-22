@@ -7,7 +7,7 @@ import LogoIcon from '../../media/logo_white.png';
 
 const useAudio = url => {
     const [audio] = useState(new Audio(url));
-    const [playing, setPlaying] = useState(false);
+    const [playing, setPlaying] = useState(true);
 
     const toggle = () => setPlaying(!playing);
 
@@ -48,7 +48,6 @@ function AudioPlayer(props) {
       };
     }, [timer, playing]);
 
-    console.log(timer/totalSeconds*100)
     const Dots = () => {
       return(
         <Expand onClick={()=>setOpen(!open)}>

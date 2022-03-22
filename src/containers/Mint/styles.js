@@ -4,10 +4,19 @@ import { Flex, Box, Image } from "reflexbox/styled-components";
 export const Container = styled(Flex)`
   justify-content: flex-end;
   flex-direction: column;
-  height: 90vh;
+  //height: 90vh;
   overflow: hidden;
+  //background: red;
+  bottom: 9%;
+  position: absolute;
   @media (max-width: 650px) {
     justify-content: center;
+  }
+  @media (max-height: 800px) {
+    bottom: 7%;
+  }
+  @media (max-height: 500px) {
+    bottom: 3%;
   }
 `;
 
@@ -16,19 +25,22 @@ export const Genyses = styled(Flex)`
   font-size: 100px;
   color: white;
   z-index: 2;
-  height: 60vh;
+  top: 40%;
   align-items: flex-end;
-  @media (max-width: 1000px) {
+  @media (max-width: 1000px), (max-height: 800px) {
     font-size: 90px;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 800px), (max-height: 750px) {
     font-size: 80px;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 600px), (max-height: 650px) {
     font-size: 70px;
   }
-  @media (max-width: 450px) {
+  @media (max-width: 450px), (max-height: 580px) {
     font-size: 55px;
+  }
+  @media (max-height: 500px) {
+    font-size: 48px;
   }
 `
 export const Button = styled.button`
