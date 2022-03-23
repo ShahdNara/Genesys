@@ -2,19 +2,19 @@ import styled from "styled-components";
 import { Flex } from "reflexbox/styled-components";
 
 export const Container = styled(Flex)`
-	position: absolute;
+	position: relative;
 	height: 56px;
 	width: ${props=> props.expand ? "250px" : "114px"};
 	align-self: flex-start;
 	border-radius: 5px;
 	margin: 30px;
-	bottom: 0px;
+	//bottom: 0px;
 	flex-direction: ${props=> props.expand ? "row" : "column"};;
 	background: rgba(66,155,184, 0.2);
 	box-shadow: 0 0 5px #3bc5cc;
   	border-radius: 5px;
 	z-index: 1;
-	@media (max-width: 920px) {
+	@media (max-width: 650px) {
 		display: none;
 	}
 	transition-property: width;
@@ -49,7 +49,7 @@ export const Logo = styled.img`
 	width: 40px;
 	align-self: ${props=> props.expand ? "flex-start" : "center"};
 	margin-top: 3px;
-	margin-left: ${props=> props.expand ? "10px" : ""};
+	margin-left: ${props=> props.expand ? "10px" : "-20px"};
 	transition-property: margin-left;
   	transition-duration: 0.2s;
 `
@@ -67,7 +67,6 @@ export const Dot = styled(Flex)`
 		50% {
 			height: 25px;
 		}
-
 	  }
 `
 export const Expand = styled(Flex)`
