@@ -9,6 +9,7 @@ import { FAQ } from "../FAQ";
 import Roadmap from "../Roadmap";
 import { Team } from "../Team";
 import AudioPlayer from "../../components/AudioPlayer";
+import Socials from "../../components/Socials";
 
 function HomePage() {
     const handleScroll = (e) => {
@@ -58,6 +59,7 @@ function HomePage() {
     if(tab != 5) {
     return(
         <Container onWheel={onWheel} onScroll={onWheel}>
+            <Socials />
             <Navbar onClick={handleClick}/>
             <Section>
                 {sections[tab]}
@@ -70,6 +72,7 @@ function HomePage() {
     ) }
     else{ return(
         <Container>
+            <Socials />
             <Navbar onClick={handleClick}/>
             <Section>
                 <FAQ />
