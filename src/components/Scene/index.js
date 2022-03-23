@@ -1,7 +1,7 @@
-import React, { useRef, useState, useEffect } from 'react'
-import { Canvas, useFrame, useLoader, useThree, extend } from '@react-three/fiber'
+import React, { useRef, useState } from 'react'
+import { Canvas} from '@react-three/fiber'
 
-import { Belt, Asteroid, Planet, Saturn, Blackhole, Spaceships, Sun, Spacestation } from "./objects"
+import { Planet, Saturn, Spaceships, Sun, Spacestation } from "./objects"
 
 import ExtendedCameraControls from './ExtendedCameraControls'
 
@@ -16,9 +16,6 @@ const positions = {
 // Return the view, these are regular Threejs elements expressed in JSX
 export const Scene = props => {
 	const [spaceship, setSpaceship] = useState()
-	const [toggle, setToggle] = useState(false)
-	const counter = useRef(0);
-	const mesh = useRef();
 
 	const findSpaceships = (pos) => {
 		setSpaceship(pos)

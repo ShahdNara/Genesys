@@ -10,7 +10,7 @@
     font-family: "Polaris";
     src: url('./Polaris.otf');
 }
-@font-face {
+/* @font-face {
     font-family: "SourceCodePro-Black";
     src: url('./SourceCodePro-Light.ttf');
 }
@@ -21,4 +21,4 @@
 @font-face {
     font-family: "Teko";
     src: url('./Teko-Regular.ttf');
-}
+} */
