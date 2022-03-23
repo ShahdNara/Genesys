@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Container, Play, PlayArrow, Logo, Dot, Expand, Column, Title, Bar, ProgBar, Wrapper } from "./styles";
 import PlayIcon from '../../media/playArrow2.png'
 import PauseIcon from '../../media/pause.png'
-import soundtrack from '../../media/soundtrack.mp4';
+import soundtrack from '../../media/soundtrack2.mp4';
 import LogoIcon from '../../media/logo_white.png';
 
 const useAudio = url => {
     const [audio] = useState(new Audio(url));
-    const [playing, setPlaying] = useState(true);
+    const [playing, setPlaying] = useState(false);
 
     const toggle = () => setPlaying(!playing);
 

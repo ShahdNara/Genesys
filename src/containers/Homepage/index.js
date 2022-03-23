@@ -8,6 +8,7 @@ import { Characters } from "../Characters";
 import Roadmap from "../Roadmap";
 import { Team } from "../Team";
 import AudioPlayer from "../../components/AudioPlayer";
+import Socials from "../../components/Socials";
 
 function HomePage() {
 
@@ -47,6 +48,7 @@ function HomePage() {
     console.log(tab)
     return(
         <Container>
+            <Socials />
             {/* <Navbar onClick={handleClick}/> */}
             <Section>
                 {sections[tab]}
