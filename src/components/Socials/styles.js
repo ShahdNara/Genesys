@@ -6,12 +6,15 @@ export const Container = styled(Flex)`
   align-items:center;
   flex-direction: row;
   position: absolute;
-  top: 0;
-  right: 0;
-  margin: 20px;
+  top: 5%;
+  right: 2rem;
   width: 100px;
   cursor: pointer;
   z-index: 2;
+  @media (max-width: 600px) {
+    display: ${props=>props.main || "none"}
+  }
+  
 `;
 
 export const Text = styled(Flex)`

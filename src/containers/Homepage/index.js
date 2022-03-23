@@ -59,7 +59,7 @@ function HomePage() {
     if(tab != 5) {
     return(
         <Container onWheel={onWheel} onScroll={onWheel}>
-            <Socials />
+            <Socials tab={tab}/>
             <Navbar onClick={handleClick}/>
             <Section>
                 {sections[tab]}
