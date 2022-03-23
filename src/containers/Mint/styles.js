@@ -16,7 +16,7 @@ export const Container = styled(Flex)`
     bottom: 7%;
   }
   @media (max-height: 500px) {
-    bottom: 3%;
+    bottom: 1%;
   }
 `;
 
@@ -51,10 +51,10 @@ export const Button = styled.button`
 
 export const ArrowsWrapper = styled(Flex)`
   align-self: center;
-  width: 100%;
+  //width: 30%;
   justify-content: center;
   flex-direction: column;  
-  padding-top: 20px;
+  //padding-top: 20px;
 `
 export const Arrows = styled.div`
   position: relative;
