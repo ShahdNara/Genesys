@@ -46,6 +46,11 @@ export const Wrapper = styled(Flex)`
 	height: 100%;
 	justify-content: center;
 	align-items: center;
+	margin-left: -180px;
+	margin-top: -100px;
+	// margin-top:${props=>props.down ? "00px" : "-70px"}
+	//background:blue;
+	//overflow-y: hidden;
 `
 export const Row = styled(Flex)`
 	flex-direction: row;
@@ -60,8 +65,9 @@ export const Box = styled(Flex)`
 	border-color: #3bc5cc;
 	background: rgba(66,155,184, 0.2);
 	box-shadow: 0 0 5px #3bc5cc;
-	position: absolute;
-	top: ${props => !props.up ? "135px" : ""};
+	//position: absolute;
+	//top: 50%;
+	top: ${props => !props.up ? "305px" : ""};
 	bottom: ${props => props.up ? "135px" : ""};
 	margin-left: 120px;
 	padding: 17px;
@@ -111,6 +117,8 @@ export const Line = styled(Flex)`
 	flex-direction: column;
 	align-self: center;
 	margin-bottom: -4px;
+	margin-top: 50px;
+
 `
 
 export const ThinLine = styled(Flex)`
@@ -127,17 +135,19 @@ export const ThinLine = styled(Flex)`
 `
 
 export const VerticalLine = styled(Flex)`
-	height: ${props => props.height ? props.height : "1px"};
+	// height: ${props => props.height ? props.height : "1px"};
+	height: 50px;
 	width: 1px;
 	background: #3bc5cc;
 	box-shadow: 0 0 2px #3bc5cc;
   border-radius: 5px;
-	visibility: ${props => props.invisible ? "hidden" : ""};
+	//visibility: ${props => props.invisible ? "hidden" : ""};
 `
 
 export const Div = styled(Flex)`
 	width: 100%;
 	height: 100%;
+	padding-top: 4%;
 `
 
 export const BigText = styled(Flex)`

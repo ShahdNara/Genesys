@@ -41,20 +41,48 @@ const Roadmap = (props) => {
     }
 
     const Step = (props) => {
-        return(
-            <Wrapper>
-                <Box up={!props.up}>
-                    <Title>{props.title}</Title>
-                    <Text>{props.text}</Text>
-                </Box>
-                <VerticalLine height="100px" invisible={!props.up}/>
-                <Circle>
-                    <Icon src={props.icon} />
-                </Circle>
-                <VerticalLine height="100px" invisible={props.up}/>
-            </Wrapper>
-        )
-    }
+        if (props.up) {
+            return(
+                <Wrapper>
+                    <Box>
+                        <Title>{props.title}</Title>
+                        <Text>{props.text}</Text>
+                    </Box>
+                    <VerticalLine height="100px" invisible={!props.up}/>
+                    <Circle>
+                        <Icon src={props.icon} />
+                    </Circle>
+                </Wrapper>
+            ) 
+        } else {
+            return(
+                <Wrapper>
+                    <Box>
+                        <Title>{props.title}</Title>
+                        <Text>{props.text}</Text>
+                    </Box>
+                    <VerticalLine height="100px" invisible={!props.up}/>
+                    <Circle>
+                        <Icon src={props.icon} />
+                    </Circle>
+                </Wrapper>
+            )
+        }
+        }
+        // return(
+        //     <Wrapper>
+        //         <Box up={!props.up}>
+        //             <Title>{props.title}</Title>
+        //             <Text>{props.text}</Text>
+        //         </Box>
+        //         <VerticalLine height="100px" invisible={!props.up}/>
+        //         <Circle>
+        //             <Icon src={props.icon} />
+        //         </Circle>
+        //         <VerticalLine height="100px" invisible={props.up}/>
+        //     </Wrapper>
+        // )
+    
     return (
         <Div>
             <BigText>Roadmap</BigText>
