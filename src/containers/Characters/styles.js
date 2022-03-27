@@ -4,12 +4,17 @@ import { Flex, Image } from "reflexbox/styled-components";
 
 export const ScrollWrapper = styled(Flex)`
 	width: 100%;
-	height: 100%;
+	height: 100vh;
     overflow-y: scroll;
     position: absolute;
 	scroll-behavior: smooth;
     justify-content: right;
     z-index: 1;
+    @media (max-width: 800px) {
+        width: 800px;
+        position: fixed;
+        display: inline-block;
+    }
 `
 export const Container = styled(Flex)`
     justify-content: center;
@@ -18,8 +23,23 @@ export const Container = styled(Flex)`
 	width: 45%;
 	height: 100%;
     flex-direction: row;
-    //overflow: auto;
-    //background: red;
+    @media (max-width: 1700px) {
+        width: 50%;
+    }
+    @media (max-width: 1500px) {
+        width: 55%;
+    }
+    @media (max-width: 1400px) {
+        width: 80%;
+        margin-top: 110px;
+    }
+    @media (max-width: 1020px) {
+        width: 100%;
+        margin-top: 110px;
+    }
+    @media (max-width: 800px) {
+        width: 800px;
+    }
 `;
 
 export const VerticalLine = styled(Flex)`
@@ -36,15 +56,31 @@ export const VerticalLine = styled(Flex)`
     flex-direction: column;
     padding-top: 300px;
     padding-bottom: 300px;
+    @media (max-width: 1700px) {
+        left: 75%;
+    }
+    @media (max-width: 1500px) {
+        left: 73%;
+    }
+    @media (max-width: 1400px) {
+        left: 58%;
+    }
+    @media (max-width: 1020px) {
+        left: 47%;
+    }
+    @media (max-width: 800px) {
+        left: 390px;
+    }
+    @media (max-width: 750px) {
+        display: none;
+    }
 `
 
 export const Content = styled(Flex)`
     justify-content: space-between;
     height: 2000px;
 	width: 100%;
-    flex-direction: column;
-    //padding-bottom: 400px;
-    
+    flex-direction: column;    
 `
 export const Wrapper = styled(Flex)`
 	flex-direction: row;
@@ -53,7 +89,11 @@ export const Wrapper = styled(Flex)`
     padding: 50px;
     padding-bottom: 100px;
     padding-top: 100px;
-    //background: blue;
+    @media (max-width: 750px) {
+        flex-direction: column;
+        padding-bottom: 30px;
+        padding-top: 0px;
+    }
 `
 export const Row = styled(Flex)`
 	flex-direction: row;
@@ -67,6 +107,9 @@ export const Box = styled(Flex)`
 	bottom: ${props => props.up ? "135px" : ""};
 	padding: 17px;
     justify-content: center;
+    @media (max-width: 800px) {
+        width: 310px;
+    }
 `
 export const Title = styled.div`
 	font-family: Polaris;
@@ -79,6 +122,10 @@ export const Text = styled.div`
 	font-size: 23px;
 	color: ${props => props.color ? props.color : "white"};
     align-self: center;
+    // @media (max-width: 760px) {
+    //     font-size: 20px;
+    //     right: 1%;
+    // }
 `
 
 export const Circle = styled(Flex)`
@@ -118,6 +165,5 @@ export const BigText = styled(Flex)`
     line-height: 34px;
     left: 0;
     @media (max-width: 920px) {
-        font-size: 40px;
-    }
-`
+        font-size: 35px;
+    }`
