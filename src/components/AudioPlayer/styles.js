@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { Flex } from "reflexbox/styled-components";
 
 export const Container = styled(Flex)`
-	position: relative;
+	position: absolute;
 	height: 56px;
 	width: ${props=> props.expand ? "250px" : "114px"};
 	align-self: flex-start;
 	border-radius: 5px;
-	margin: 30px;
+	//margin: 30px;
 	//bottom: 0px;
 	flex-direction: ${props=> props.expand ? "row" : "column"};;
 	background: rgba(66,155,184, 0.2);
@@ -19,6 +19,8 @@ export const Container = styled(Flex)`
 	}
 	transition-property: width;
   	transition-duration: 0.2s;
+	bottom: 4%;
+  	left: 2rem;
 `;
 
 export const Play = styled(Flex)`
