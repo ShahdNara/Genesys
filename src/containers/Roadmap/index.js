@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-// import "./Timeline.css";
 import { Container, Line, CircleRow, Circle, HorizontalWrapper, HorizontalWrapper2, Wrapper, Box, Icon, ThinLine, VerticalLine, Div, Container2, Row, Title, Text, BigText } from "./styles"
 import Rocket from "./icons/1.png"
 import Music from "./icons/2.png"
