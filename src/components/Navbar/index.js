@@ -24,12 +24,13 @@ const Navbar = props => {
         return (
           <StyledMenu open={open}>
               <Container>
-                <Text onClick={() => handleOnclick(0)}>Genyses</Text>
-                <Text onClick={() => handleOnclick(1)}>Synopsis</Text>
-                <Text onClick={() => handleOnclick(2)}>Characters</Text>
-                <Text onClick={() => handleOnclick(3)}>Roadmap</Text>
-                <Text onClick={() => handleOnclick(4)}>Team</Text>
-                <Text onClick={() => handleOnclick(5)}>FAQ</Text>
+                <Text onClick={() => handleOnclick(0)}>GENYSES</Text>
+                <Text onClick={() => handleOnclick(1)}>SYOPSIS</Text>
+                <Text onClick={() => handleOnclick(2)}>OVERVIEW</Text>
+                <Text onClick={() => handleOnclick(3)}>CHARACTERS</Text>
+                <Text onClick={() => handleOnclick(4)}>ROADMAP</Text>
+                <Text onClick={() => handleOnclick(5)}>TEAM</Text>
+                {/* <Text onClick={() => handleOnclick(5)}>FAQ</Text> */}
             </Container>
           </StyledMenu>
         )

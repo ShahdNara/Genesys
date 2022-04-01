@@ -8,12 +8,14 @@ CameraControls.install({ THREE })
 const cam_pos = {
 	0: [0, 12, 112], // Mars
 	1: [-100, 12, 200], // Spaceships
-	2: [-812, 302, 228], // Spacecraft
-  3: [-880, 302, 228], // Blank space
-	4: [-2590, 1825, -100] // Saturn
+  2: [-100, 12, 200], // Spaceships
+	3: [-812, 302, 228], // Spacecraft
+  4: [-880, 302, 228], // Blank space
+	5: [-2590, 1825, -100] // Saturn
 }
 
 const ExtendedCameraControls = (props, ref) => {
+  console.log(props.tab)
   // const set = useThree((state) => state.set)
   const camera = useThree((state) => state.camera)
   const gl = useThree((state) => state.gl)
@@ -46,6 +48,10 @@ const ExtendedCameraControls = (props, ref) => {
       controls.rotate(170 * THREE.MathUtils.DEG2RAD, 0, true)
     }
     if (props.tab == 4) {
+      controls.moveTo(position[0], position[1], position[2], true)
+      controls.rotate(180 * THREE.MathUtils.DEG2RAD, 0, true)
+    }
+    if (props.tab == 5) {
       controls.moveTo(position[0], position[1], position[2], true)
       controls.rotate(180 * THREE.MathUtils.DEG2RAD, 0, true)
     }

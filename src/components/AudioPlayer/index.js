@@ -48,7 +48,7 @@ function AudioPlayer() {
       };
     }, [timer, playing]);
 
-    console.log(timer/totalSeconds*100)
+    // console.log(timer/totalSeconds*100)
     const Dots = () => {
       return(
         <Expand onClick={()=>setOpen(!open)}>
