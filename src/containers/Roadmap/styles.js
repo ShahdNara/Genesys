@@ -36,8 +36,8 @@ export const Container2 = styled(Flex)`
 `;
 
 export const CircleRow = styled(Flex)`
-  justify-content: space-between;
-  width: 3700px;
+	justify-content: space-between;
+	width: 3700px;
 	height: 100%;
 `
 
@@ -47,7 +47,7 @@ export const Wrapper = styled(Flex)`
 	justify-content: center;
 	align-items: center;
 	margin-left: -180px;
-	margin-top: -100px;
+	margin-top: -70px;
 	// margin-top:${props=>props.down ? "00px" : "-70px"}
 	//background:blue;
 	//overflow-y: hidden;
@@ -147,7 +147,8 @@ export const VerticalLine = styled(Flex)`
 export const Div = styled(Flex)`
 	width: 100%;
 	height: 100%;
-	padding-top: 4%;
+	//margin-top: 4%;
+	overflow: hidden;
 `
 
 export const BigText = styled(Flex)`
