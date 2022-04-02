@@ -15,7 +15,6 @@ const cam_pos = {
 }
 
 const ExtendedCameraControls = (props, ref) => {
-  console.log(props.tab)
   // const set = useThree((state) => state.set)
   const camera = useThree((state) => state.camera)
   const gl = useThree((state) => state.gl)

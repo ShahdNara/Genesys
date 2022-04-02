@@ -43,7 +43,6 @@ function HomePage() {
         }
     }
 
-    console.log(tab)
     if(tab != 6) {
         return(
             <Container onWheel={onWheel} onScroll={onWheel}>

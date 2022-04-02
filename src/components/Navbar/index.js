@@ -37,7 +37,6 @@ const Navbar = props => {
     }
 
     const node = useRef();
-    console.log(tab)
     return (
       <Wrapper>
         <div ref={node}>
