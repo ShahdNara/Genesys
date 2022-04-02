@@ -13,28 +13,10 @@ import AudioPlayer from "../../components/AudioPlayer";
 import Socials from "../../components/Socials";
 
 function HomePage() {
-    // const handleScroll = (e) => {
-    //     console.log("eh")
-    //     if ((tab == 0) || (tab == 1) || (tab == 4)){
-    //         if (e.nativeEvent.wheelDelta > 0) {
-    //         setTab(tab == 0 ? 0 : tab - 1)
-    //     } else {
-    //         setTab(tab == 4 ? 4 : tab + 1)
-    //         }
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     // initiate the event handler
-    //     window.addEventListener("scroll", handleScroll);
-    
-    //     // this will clean up the event every time the component is re-rendered
-    //     return function cleanup() {
-    //       window.removeEventListener("scroll", handleScroll);
-    //     }
-    // })
-    
+  
     const [tab, setTab] = useState(0);
+    const [scrollCount, setScrollCount] = useState(0);
+
     const handleClick  = (e) => {
         setTab(e);
     }
@@ -48,38 +30,45 @@ function HomePage() {
     }
 
     const onWheel = (e) => {
-        if ((tab == 0) || (tab == 1) || (tab == 2) || (tab == 5)){
-            if (e.nativeEvent.wheelDelta > 0) {
-            setTab(tab == 0 ? 0 : tab - 1)
-        } else {
-            setTab(tab == 5 ? 5 : tab + 1)
+        setScrollCount(scrollCount+1)
+        if ((scrollCount >= 1) || (tab == 1) || (tab == 2)) { //scrolling sensitivity
+            if ((tab == 0) || (tab == 1) || (tab == 2) || (tab == 5)){
+                if (e.nativeEvent.wheelDelta > 0) {
+                setTab(tab == 0 ? 0 : tab - 1)
+            } else {
+                setTab(tab == 5 ? 5 : tab + 1)
+                }
             }
+            setScrollCount(0)
         }
     }
 
     console.log(tab)
     if(tab != 6) {
-    return(
-        <Container onWheel={onWheel} onScroll={onWheel}>
-            <Socials tab={tab}/>
-            <Navbar onClick={handleClick}/>
-            <Section>
-                {sections[tab]}
-            </Section>
-            <PlanetWrapper>
-                <Scene tab={tab} />
-            </PlanetWrapper>
-            <AudioPlayer/>
-        </Container>
-    ) }
-    else{ return(
-        <Container>
-            <Socials />
-            <Navbar onClick={handleClick}/>
-            <Section>
-                <FAQ />
-            </Section>
-        </Container>)}
+        return(
+            <Container onWheel={onWheel} onScroll={onWheel}>
+                <Socials tab={tab}/>
+                <Navbar onClick={handleClick}/>
+                <Section>
+                    {sections[tab]}
+                </Section>
+                <PlanetWrapper>
+                    <Scene tab={tab} />
+                </PlanetWrapper>
+                <AudioPlayer/>
+            </Container>
+        ) 
+    }
+    else { 
+            return(
+            <Container>
+                <Socials />
+                <Navbar onClick={handleClick}/>
+                <Section>
+                    <FAQ />
+                </Section>
+            </Container>)
+        }
     
 }
 

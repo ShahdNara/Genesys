@@ -41,7 +41,7 @@ const ExtendedCameraControls = (props, ref) => {
     }
     if (props.tab == 2) {
       controls.moveTo(position[0], position[1], position[2], true)
-      controls.rotate(170 * THREE.MathUtils.DEG2RAD, 0, true)
+      controls.rotate(180 * THREE.MathUtils.DEG2RAD, 0, true)
     }
     if (props.tab == 3) {
       controls.moveTo(position[0], position[1], position[2], true)

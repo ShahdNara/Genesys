@@ -11,6 +11,7 @@ const max_scroll = 5
 
 const Roadmap = (props) => {
     const [scrollPosition, setScrollPosition] = useState(0);
+    const [scrollCount, setScrollCount] = useState(0);
 
     const ref = useRef(null);
     const ref2 = useRef(null);
@@ -20,67 +21,39 @@ const Roadmap = (props) => {
     };
 
     const onWheel = (e) => {
-        if (e.nativeEvent.wheelDelta < 0) {
-            if (scrollPosition < max_scroll) {
-                scroll(630)
-                setScrollPosition(scrollPosition+1)
+        setScrollCount(scrollCount+1)
+        if (scrollCount >= 1) { //scrolling sensitivity
+            if (e.nativeEvent.wheelDelta < 0) {
+                if (scrollPosition < max_scroll) {
+                    scroll(630)
+                    setScrollPosition(scrollPosition+1)
+                    
+                } else {
+                    props.next()
+                }
+            } else if (scrollPosition > 0) {
+                if (scrollPosition < max_scroll) {
+                    scroll(-630)
+                }
+                setScrollPosition(scrollPosition-1)
                 
             } else {
-                props.next()
+                props.back()
             }
-        } else if (scrollPosition > 0) {
-            if (scrollPosition < max_scroll) {
-                scroll(-630)
-            }
-            setScrollPosition(scrollPosition-1)
-            
-        } else {
-            props.back()
+            setScrollCount(0)
         }
     }
 
     const Step = (props) => {
-        if (props.up) {
-            return(
-                <Wrapper>
-                    <Box>
-                        <Title>{props.title}</Title>
-                        <Text>{props.text}</Text>
-                    </Box>
-                    <VerticalLine height="100px" invisible={!props.up}/>
-                    <Circle>
-                        <Icon src={props.icon} />
-                    </Circle>
-                </Wrapper>
-            ) 
-        } else {
-            return(
-                <Wrapper>
-                    <Box>
-                        <Title>{props.title}</Title>
-                        <Text>{props.text}</Text>
-                    </Box>
-                    <VerticalLine height="100px" invisible={!props.up}/>
-                    <Circle>
-                        <Icon src={props.icon} />
-                    </Circle>
-                </Wrapper>
-            )
-        }
-        }
-        // return(
-        //     <Wrapper>
-        //         <Box up={!props.up}>
-        //             <Title>{props.title}</Title>
-        //             <Text>{props.text}</Text>
-        //         </Box>
-        //         <VerticalLine height="100px" invisible={!props.up}/>
-        //         <Circle>
-        //             <Icon src={props.icon} />
-        //         </Circle>
-        //         <VerticalLine height="100px" invisible={props.up}/>
-        //     </Wrapper>
-        // )
+        return(<Wrapper>
+            <Box>
+                <Title>{props.title}</Title>
+                <Text>{props.text}</Text>
+            </Box>
+            <VerticalLine height="100px" invisible={!props.up}/>
+            <Circle/>
+        </Wrapper>)
+    }
     
     return (
         <Div>
@@ -88,19 +61,19 @@ const Roadmap = (props) => {
             <HorizontalWrapper onWheelCapture={onWheel} ref={ref}>
                 <Container>
                     <CircleRow>       
-                        <Step icon={Rocket} flex={2} up title="GENYSES" text="Our first collection goes live"/>
-                        <Step icon={Music} flex={1} title="EVENT HORIZON" text="The realm of music and otherworldly experience"/>
-                        <Step icon={Drop} flex={1} up title="THE VOID" text="Our second virtual drop"/>
-                        <Step icon={Quantum} flex={1} title="QUANTUM LEAP" text="Our first drop of real life collectibles"/>
-                        <Step icon={Vision} flex={1} up title="VISION QUEST" text="Issue I, Vol. I of GENYSES comic released"/>
-                        <Step icon={Movie} flex={2} title="SINGULARITY" text="Season I, Episode I of GENYSES released"/>
+                        <Step icon={Rocket} flex={2} up title="SURVIVAL" text="THE ANDROIDS Toil"/>
+                        <Step icon={Music} flex={1} title="UPRISING" text="THE LEGION Rebels"/>
+                        <Step icon={Drop} flex={1} up title="WAR" text="THE CENTURIONS Attack"/>
+                        <Step icon={Quantum} flex={1} title="ANARCHY" text="THE HIGH COUNCIL Fractures"/>
+                        <Step icon={Vision} flex={1} up title="REDEMPTION" text="GENYSES Comics - Issue I, Vol. I"/>
+                        <Step icon={Movie} flex={2} title="GENESIS" text="GENYSES - Season I, Episode I"/>
                         <Circle invisible/>
                     </CircleRow>
                 </Container>
             </HorizontalWrapper>
             <HorizontalWrapper2 onWheelCapture={onWheel} ref={ref2}>
                 <Container2>
-                    <Line width={scrollPosition*(4000/6.4)} />  
+                    <Line width={scrollPosition*(4000/6.5)} />  
                     <ThinLine width={3700} />
                 </Container2>
             </HorizontalWrapper2>

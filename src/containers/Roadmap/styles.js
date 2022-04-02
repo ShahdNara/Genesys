@@ -46,8 +46,8 @@ export const Wrapper = styled(Flex)`
 	height: 100%;
 	justify-content: center;
 	align-items: center;
-	margin-left: -180px;
-	margin-top: -70px;
+	margin-left: -200px;
+	margin-top: -73px;
 	// margin-top:${props=>props.down ? "00px" : "-70px"}
 	//background:blue;
 	//overflow-y: hidden;
@@ -86,15 +86,15 @@ export const Text = styled.div`
 
 export const Circle = styled(Flex)`
     border-radius: 100%;
-    width: 150px;
-    height: 150px;
+    width: 30px;
+    height: 30px;
     border-color: #3bc5cc;
 	border-style: solid;
 	border-width: 1px;
 	align-self: center;
 	visibility: ${props => props.invisible ? "hidden" : ""};
 	justify-content: center;
-	background: black;
+	background: #3bc5cc;
 	z-index: 1
 `
 
@@ -108,7 +108,7 @@ export const Icon = styled.img`
 export const Line = styled(Flex)`
   height: 5px;
   width: ${props => props.width};
-	max-width: 3000px;
+	max-width: 3100px;
   background: #3bc5cc;
   transition-property: width;
   transition-duration: 0.2s;
