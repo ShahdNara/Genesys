@@ -21,7 +21,7 @@ export default function TrackpadDetector() {
         document.addEventListener("DOMMouseScroll", detectTrackPad, false);
 
         counter.current += 1;
-        const timer = setTimeout(() => {setTrackPad(false); console.log('clear')}, 10000);
+        const timer = setTimeout(() => {setTrackPad(false); console.log('clear')}, 60000);
 
         return () => clearTimeout(timer);
         

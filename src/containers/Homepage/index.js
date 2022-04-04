@@ -34,7 +34,7 @@ function HomePage() {
 
     const onWheel = (e) => {
         setScrollCount(scrollCount+1)
-        const sensitivity = isTrackpad ? 15 : 5
+        const sensitivity = isTrackpad ? 20 : 6
         console.log(sensitivity)
         if ((scrollCount >= sensitivity)) { //scrolling sensitivity
             if ((tab == 0) || (tab == 1) || (tab == 2) || (tab == 5)){
