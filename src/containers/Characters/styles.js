@@ -24,9 +24,9 @@ export const Container = styled(Flex)`
 	height: 100%;
     flex-direction: row;
     @media (max-width: 1700px) {
-        width: 50%;
+        width: 53%;
     }
-    @media (max-width: 1500px) {
+    @media (max-width: 1470px) {
         width: 55%;
     }
     @media (max-width: 1400px) {
@@ -46,7 +46,7 @@ export const VerticalLine = styled(Flex)`
     width: 3px;
     height: 3000px;
     //background: #429BB8;
-    background: linear-gradient(#6C469D, #723943, #B7AB8D, #FE7A25 );
+    background: linear-gradient(#6C469D, #FA7523, #6F3B45, #B7AA8E );
 	//box-shadow: 0 0 2px #429BB8;
     border-radius: 5px;
     align-self: center;
@@ -57,10 +57,10 @@ export const VerticalLine = styled(Flex)`
     padding-top: 300px;
     padding-bottom: 300px;
     @media (max-width: 1700px) {
-        left: 75%;
+        left: 73%;
     }
     @media (max-width: 1500px) {
-        left: 73%;
+        left: 72%;
     }
     @media (max-width: 1400px) {
         left: 58%;

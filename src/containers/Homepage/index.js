@@ -13,6 +13,9 @@ import AudioPlayer from "../../components/AudioPlayer";
 import Socials from "../../components/Socials";
 import TrackpadDetector from "../../components/TrackpadDetector";
 
+export const TRACKPAD_SENS = 25
+export const MOUSE_SENS = 8
+
 function HomePage() {
   
     const [tab, setTab] = useState(0);
@@ -27,14 +30,14 @@ function HomePage() {
         0: <Mint/>,
         1: <Synopsis/>,
         2: <Overview/>,
-        3: <Characters next={() => setTab(4)} back={() => setTab(2)}/>,
-        4: <Roadmap next={() => setTab(5)} back={() => setTab(3)} isTrackpad={isTrackpad}/>,
+        3: <Characters next={() => setTab(4)} back={() => setTab(2)} isTrackpad={isTrackpad} trackpad_sens={TRACKPAD_SENS} mouse_sens={MOUSE_SENS}/>,
+        4: <Roadmap next={() => setTab(5)} back={() => setTab(3)} isTrackpad={isTrackpad} trackpad_sens={TRACKPAD_SENS} mouse_sens={MOUSE_SENS}/>,
         5: <Team />
     }
 
     const onWheel = (e) => {
         setScrollCount(scrollCount+1)
-        const sensitivity = isTrackpad ? 20 : 6
+        const sensitivity = isTrackpad ? TRACKPAD_SENS : MOUSE_SENS
         console.log(sensitivity)
         if ((scrollCount >= sensitivity)) { //scrolling sensitivity
             if ((tab == 0) || (tab == 1) || (tab == 2) || (tab == 5)){

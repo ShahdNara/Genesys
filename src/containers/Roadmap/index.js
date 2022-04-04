@@ -23,7 +23,7 @@ const Roadmap = (props) => {
 
     const onWheel = (e) => {
         setScrollCount(scrollCount+1)
-        const sensitivity = isTrackpad ? 20 : 6
+        const sensitivity = isTrackpad ? props.trackpad_sens : props.mouse_sens
         console.log(sensitivity)
         if (scrollCount >= sensitivity) { //scrolling sensitivity
             if (e.nativeEvent.wheelDelta < 0) {

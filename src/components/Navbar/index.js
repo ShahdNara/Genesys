@@ -25,7 +25,7 @@ const Navbar = props => {
           <StyledMenu open={open}>
               <Container>
                 <Text onClick={() => handleOnclick(0)}>GENYSES</Text>
-                <Text onClick={() => handleOnclick(1)}>SYOPSIS</Text>
+                <Text onClick={() => handleOnclick(1)}>SYNOPSIS</Text>
                 <Text onClick={() => handleOnclick(2)}>OVERVIEW</Text>
                 <Text onClick={() => handleOnclick(3)}>CHARACTERS</Text>
                 <Text onClick={() => handleOnclick(4)}>ROADMAP</Text>

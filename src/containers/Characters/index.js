@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { Container, VerticalLine, Text, Wrapper, Box, Title, Circle, Icon, Content, ScrollWrapper, Picture, BigText } from "./styles";
 import Androids from "./icon/androids.png"
 import Centurions from "./icon/centurions.png"
@@ -9,16 +9,30 @@ import useWindowDimensions from '../../components/useWindowDimensions';
 export const Characters = (props) => {
     const ref = useRef();
     const { height, width } = useWindowDimensions();
+    const [scrollCount, setScrollCount] = useState(0);
+    const isTrackpad = props.isTrackpad;
+    
     const onScroll = (e) => {
         if (ref.current) {
           const { scrollTop, scrollHeight, clientHeight } = ref.current;
-          if (scrollTop == 0 && e.nativeEvent.wheelDelta > 0) {
-            props.back()
+          const sensitivity = isTrackpad ? props.trackpad_sens : props.mouse_sens
+          
+            if (scrollTop == 0 && e.nativeEvent.wheelDelta > 0) {
+                setScrollCount(scrollCount+1)
+                console.log(scrollCount)
+                if (scrollCount >= sensitivity) { //scrolling sensitivity
+                    props.back()
+                }
+            }
+            if (scrollTop + clientHeight >= scrollHeight) {
+                setScrollCount(scrollCount+1)
+                console.log(scrollCount)
+                if (scrollCount >= sensitivity) { //scrolling sensitivity
+                    props.next()
+                }
+            }
           }
-          if (scrollTop + clientHeight >= scrollHeight) {
-            props.next()
-          }
-        }
+        
       };
     const Character = (props) => {
         if (width <= 750) {
@@ -66,9 +80,9 @@ export const Characters = (props) => {
                 <Content>
                     <VerticalLine>
                         <Circle color="#6C469D"/>
-                        <Circle color="#723943"/>
-                        <Circle color="#B7AB8D"/>
-                        <Circle color="#FE7A25"/>
+                        <Circle color="#FA7523"/>
+                        <Circle color="#6F3B45"/>
+                        <Circle color="#B7AA8E"/>
                     </VerticalLine>       
                     <Character icon={Androids} color="white" title="The Androids" text="The labor class of GENYSES. The androids are relegated to the lowest rungs of Martian society and programmed not to disobey. However, for the select few found and freed by The Legion, reprogramming is the path to freedom through resistance."/>
                     <Character icon={Legion} isLeft={true} color="white" title="The Legion" text="The resistance of freed androids. After their initial failed rebellion, the group has since gone underground and taken refuge in the few habitable places left on Earth, biding their time before moving against GENYSES."/>
