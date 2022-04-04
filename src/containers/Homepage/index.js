@@ -14,7 +14,7 @@ import Socials from "../../components/Socials";
 import TrackpadDetector from "../../components/TrackpadDetector";
 
 export const TRACKPAD_SENS = 25
-export const MOUSE_SENS = 8
+export const MOUSE_SENS = 5
 
 function HomePage() {
   

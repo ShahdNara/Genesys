@@ -40,7 +40,7 @@ export const Picture = styled.img`
     width: 100%;
     //align-self: center;
 `
-export const Wrapper = styled(Flex)`
+export const Wrapper = styled.div`
     height: 73%;
     width: 100%;
 `
@@ -79,4 +79,29 @@ export const BigText = styled(Flex)`
     @media (max-width: 920px) {
         font-size: 40px;
     }
+`
+
+export const Logo = styled.img`
+	src: ${props => props.src}	
+	height: 100%;
+	width: 20px;
+`
+
+export const Link = styled.a`
+  display: flex;  
+  flex-direction: row;
+  text-decoration: none;
+  margin-left: 4px;
+`
+
+export const Socials = styled(Flex)` 
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+`
+
+export const Icons = styled(Flex)` 
+  flex-direction: row;
+  justify-content: flex-end;
+
 `

@@ -2,6 +2,7 @@
     height: 220px;
     width: 167px;
     perspective:1000px;
+    cursor: pointer;
   }
   
   .flip-card-inner{
@@ -15,7 +16,7 @@
   }
   
   
-  .flip-card:hover .flip-card-inner{
+  .flip-card:active .flip-card-inner{
     transform:rotateY(180deg);
   }
   

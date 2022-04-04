@@ -15,8 +15,8 @@
   -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
   transform: rotate(45deg);
    
-  border-right: 2px solid rgba(255, 255, 255, 0.4);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   margin: 0 0 3px 4px;
   
   width: 16px;
@@ -90,8 +90,8 @@
   width: 24px;
   border-radius: 14px;
   transform: none;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  top: 170px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  top: 190px;
 }
 /* @media (max-width: 1000px), (max-height: 800px) {
   .mouse {
@@ -109,7 +109,7 @@
 .wheel {
   display: block;
   margin: 5px auto;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2);
   position: relative;
   
   height: 4px;
