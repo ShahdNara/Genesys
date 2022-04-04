@@ -1,13 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Container, Line, CircleRow, Circle, HorizontalWrapper, HorizontalWrapper2, Wrapper, Box, Icon, ThinLine, VerticalLine, Div, Container2, Row, Title, Text, BigText } from "./styles"
-import Rocket from "./icons/1.png"
-import Music from "./icons/2.png"
-import Drop from "./icons/3.png"
-import Quantum from "./icons/4.png"
-import Vision from "./icons/5.png"
-import Movie from "./icons/6.png"
 
-const max_scroll = 5
+const max_scroll = 10
 
 const Roadmap = (props) => {
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -23,12 +17,12 @@ const Roadmap = (props) => {
 
     const onWheel = (e) => {
         setScrollCount(scrollCount+1)
-        const sensitivity = isTrackpad ? props.trackpad_sens : props.mouse_sens
-        console.log(sensitivity)
+        const sensitivity = isTrackpad ? props.trackpad_sens : props.mouse_sens - 2
+        console.log(scrollPosition)
         if (scrollCount >= sensitivity) { //scrolling sensitivity
             if (e.nativeEvent.wheelDelta < 0) {
                 if (scrollPosition < max_scroll) {
-                    scroll(630)
+                    scroll(650)
                     setScrollPosition(scrollPosition+1)
                     
                 } else {
@@ -36,7 +30,7 @@ const Roadmap = (props) => {
                 }
             } else if (scrollPosition > 0) {
                 if (scrollPosition < max_scroll) {
-                    scroll(-630)
+                    scroll(-650)
                 }
                 setScrollPosition(scrollPosition-1)
                 
@@ -64,20 +58,26 @@ const Roadmap = (props) => {
             <HorizontalWrapper onWheelCapture={onWheel} ref={ref}>
                 <Container>
                     <CircleRow>       
-                        <Step icon={Rocket} flex={2} up title="SURVIVAL" text="THE ANDROIDS Toil"/>
-                        <Step icon={Music} flex={1} title="UPRISING" text="THE LEGION Rebels"/>
-                        <Step icon={Drop} flex={1} up title="WAR" text="THE CENTURIONS Attack"/>
-                        <Step icon={Quantum} flex={1} title="ANARCHY" text="THE HIGH COUNCIL Fractures"/>
-                        <Step icon={Vision} flex={1} up title="REDEMPTION" text="GENYSES Comics - Issue I, Vol. I"/>
-                        <Step icon={Movie} flex={2} title="GENESIS" text="GENYSES - Season I, Episode I"/>
+                        <Step flex={2} up title="SURVIVAL" text="THE ANDROIDS collection drops"/>
+                        <Step flex={1} title="THE GAMES BEGIN" text="The introduction of interact-to-earn experiences as part of THE ANDROIDS story arc"/>
+                        <Step flex={1} up title="UPRISING" text="THE LEGION collection drops"/>
+                        <Step flex={1} title="CLOSING RANKS" text="The introduction of user-generated storylines as part of THE LEGION story arc"/>
+                        <Step flex={1} up title="WAR" text="THE CENTURIONS collection drops"/>
+                        <Step flex={1} title="BATTLE TESTED" text="The introduction of competitive gaming with prizes as part of THE CENTURIONS story arc"/>
+                        <Step flex={1} title="ANARCHY" text="THE HIGH COUNCIL collection drops"/>
+                        <Step flex={1} title="POWER TRIP" text="The introduction of exclusive membership rewards for holders of THE HIGH COUNCIL collection"/>
+                        <Step flex={1} title="REDEMPTION" text="GENYSES Comics - Issue I, Vol. I released"/>
+                        <Step flex={1} title="SINGULARITY" text="GENYSES - Season I, Episode I released"/>
+                        <Step flex={2} title="GENESIS" text="Our ecosystem expands into a DAO that takes control over the story"/>
+
                         <Circle invisible/>
                     </CircleRow>
                 </Container>
             </HorizontalWrapper>
             <HorizontalWrapper2 onWheelCapture={onWheel} ref={ref2}>
                 <Container2>
-                    <Line width={scrollPosition*(4000/6.5)} />  
-                    <ThinLine width={3700} />
+                    <Line width={scrollPosition*(4500/6.63)} />  
+                    <ThinLine width={10000} />
                 </Container2>
             </HorizontalWrapper2>
         </Div>

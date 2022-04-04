@@ -32,12 +32,12 @@ export const Container2 = styled(Flex)`
   justify-content: center;
 	display: inline-block;
 	align-items: center;
-	margin-left: 50%;
+	margin-left: 52%;
 `;
 
 export const CircleRow = styled(Flex)`
 	justify-content: space-between;
-	width: 3700px;
+	width: 7500px;
 	height: 100%;
 `
 
@@ -58,7 +58,7 @@ export const Row = styled(Flex)`
 export const Box = styled(Flex)`
 	flex-direction: column;
 	border-radius: 5px;
-	width: 300px;
+	width: 340px;
 	height: 150px;
 	border-style: solid;
 	border-width: 1px;
@@ -108,7 +108,7 @@ export const Icon = styled.img`
 export const Line = styled(Flex)`
   height: 5px;
   width: ${props => props.width};
-	max-width: 3100px;
+	max-width: 6800px;
   background: #3bc5cc;
   transition-property: width;
   transition-duration: 0.2s;
