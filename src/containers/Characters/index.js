@@ -57,23 +57,7 @@ export const Characters = (props) => {
         </Wrapper>)
         }
     }
-    // const Character = (props) => {
-    //     const visible = props.isLeft
-    //     return(
-    //     <Wrapper>
-    //         <Box style={{display: visible ? 'block' : 'none' }}>
-    //             <Text color={props.color}>{props.text}</Text>
-    //         </Box>
-    //         <Picture>
-    //             <Title>{props.title}</Title>
-    //             <Icon src={props.icon}/>
-    //         </Picture>
-    //         <Box style={{display: !visible ? 'block' : 'none' }}>
-    //             <Text color={props.color}>{props.text}</Text>
-    //         </Box>
-    //     </Wrapper>
-    //     )
-    // }
+
     return(
         <ScrollWrapper onWheelCapture={onScroll} ref={ref}>
             <BigText>Characters</BigText>

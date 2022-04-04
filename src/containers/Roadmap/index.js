@@ -19,10 +19,13 @@ const Roadmap = (props) => {
         ref.current.scrollLeft += x;
         ref2.current.scrollLeft += x;
     };
+    const isTrackpad = props.isTrackpad;
 
     const onWheel = (e) => {
         setScrollCount(scrollCount+1)
-        if (scrollCount >= 1) { //scrolling sensitivity
+        const sensitivity = isTrackpad ? 15 : 5
+        console.log(sensitivity)
+        if (scrollCount >= sensitivity) { //scrolling sensitivity
             if (e.nativeEvent.wheelDelta < 0) {
                 if (scrollPosition < max_scroll) {
                     scroll(630)
