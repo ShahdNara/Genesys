@@ -13,11 +13,7 @@
     transition: transform 0.9s;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
-  
-  
-  .flip-card:active .flip-card-inner{
-    transform:rotateY(180deg);
+    display: flex;
   }
   
   .flip-card-back , .flip-card-front{

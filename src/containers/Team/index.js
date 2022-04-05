@@ -13,12 +13,17 @@ import LinkedIn from "./icons/linkedin.png"
 import "./styles.css"
 
 const Item = (props) => {
+    const [flip, setFlip] = useState(0)
+
+    const changeStyle=(e)=> {
+        setFlip(!flip)
+    }
     return(
         <div class="flip-card">
-            <div class="flip-card-inner">
+            <div class="flip-card-inner" style={{transform: flip ? "rotateY(180deg)": "rotateY(0deg)"}}>
                 <div class="flip-card-front">
                     <Card>
-                        <Wrapper>
+                        <Wrapper onMouseOver={()=> setFlip(true)} onMouseLeave={()=> setFlip(false)}>
                             <Picture src={props.src} />
                         </Wrapper>
                         <Info>

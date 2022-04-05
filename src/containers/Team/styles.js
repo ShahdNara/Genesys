@@ -47,6 +47,7 @@ export const Wrapper = styled.div`
 export const Info = styled(Flex)`
     flex-direction: column;
     padding: 10px;
+    z-index: 10;
 `
 export const Name = styled(Flex)`
     font-family: Polaris;
