@@ -15,9 +15,6 @@ import "./styles.css"
 const Item = (props) => {
     const [flip, setFlip] = useState(0)
 
-    const changeStyle=(e)=> {
-        setFlip(!flip)
-    }
     return(
         <div class="flip-card">
             <div class="flip-card-inner" style={{transform: flip ? "rotateY(180deg)": "rotateY(0deg)"}}>
@@ -30,10 +27,10 @@ const Item = (props) => {
                             <Socials>
                                 <Name>{props.name}</Name>
                                 <Icons>
-                                    {props.twitter && <Link href={props.twitter}>
+                                    {props.twitter && <Link href={props.twitter} target="_blank" rel="noopener noreferrer">
                                         <Logo src={Twitter}/>
                                     </Link>}
-                                    {props.linkedin && <Link href={props.linkedin}>
+                                    {props.linkedin && <Link href={props.linkedin} target="_blank" rel="noopener noreferrer">
                                         <Logo src={LinkedIn}/>
                                     </Link>}
                                 </Icons>
