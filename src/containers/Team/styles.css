@@ -4,6 +4,13 @@
     perspective:1000px;
     cursor: pointer;
   }
+
+  @media (max-width: 730px) {
+    .flip-card{
+      height: 240px;
+      width: 187px;
+    }
+  }
   
   .flip-card-inner{
      position: relative;

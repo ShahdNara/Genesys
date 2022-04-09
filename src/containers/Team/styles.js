@@ -3,12 +3,12 @@ import { Flex, Box, Image } from "reflexbox/styled-components";
 
 export const Container = styled(Flex)`
     height: 100%;
-    //background:red;
     align-self: flex-end;
-    //top: 50px;
-    //position: absolute;
-    //align-items: center;
     margin-right: 80px;
+    @media (max-width: 1200px) {
+        align-self: center;
+        margin-right: 0px;
+    }
 `
 
 export const Row = styled(Flex)`
@@ -20,6 +20,11 @@ export const Row = styled(Flex)`
 export const Grid = styled(Flex)`
     flex-direction: column;
     margin-top: 15%;
+    @media (max-width: 1100px) {
+        margin-top: 0;
+        align-self: center;
+    }
+
 `
 
 export const Card = styled(Flex)`
@@ -30,9 +35,9 @@ export const Card = styled(Flex)`
 	border-color: #3bc5cc;
 	background: rgba(66,155,184, 0.2);
 	box-shadow: 0 0 5px #3bc5cc;
-    //padding: 10px;
     flex-direction: column;
     justify-content: space-between;
+
 `
 export const Picture = styled.img`
     src: ${props=>props.src}
@@ -57,7 +62,12 @@ export const Role = styled(Flex)`
     font-family: 'Agency FB';
     font-size: 17px;
     letter-spacing: 1px;
-    color: #999999
+    color: #999999;
+    @media (max-width: 1100px) {
+        font-size: 15px;
+    }
+    display: ${props=>props.back && "none"};
+
 `
 export const Bio = styled(Flex)`
     flex-direction: column;
@@ -99,10 +109,40 @@ export const Socials = styled(Flex)`
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  display: ${props=>props.back && "none"};
 `
 
 export const Icons = styled(Flex)` 
   flex-direction: row;
   justify-content: flex-end;
+`
 
+export const Div = styled(Flex)`
+	width: 100%;
+	height: 100%;
+	//margin-top: 4%;
+	overflow: hidden;
+`
+
+export const MobileContainer = styled(Flex)`
+	width: 100%;
+	height: 100vh;
+	overflow-y: scroll;
+	position: absolute;
+	scroll-behavior: smooth;
+	justify-content: center;
+	top: 15%;
+    padding-top: 10px;
+`
+
+export const Column = styled(Flex)`
+	flex-direction: column;
+    height: 2100px;
+    justify-content: space-between;
+    padding-bottom: 60%;
+`
+
+export const MobileWrapper = styled(Flex)`
+	flex-direction: column;
+	height: 100%;
 `

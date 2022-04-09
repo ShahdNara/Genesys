@@ -12,9 +12,9 @@ export const Container = styled(Flex)`
   cursor: pointer;
   z-index: 2;
   //background:red;
-  @media (max-width: 600px) {
-    display: ${props=>props.main || "none"}
-  }
+  // @media (max-width: 600px) {
+  //   display: ${props=>props.main || "none"}
+  // }
   
 `;
 
