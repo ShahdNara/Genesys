@@ -9,7 +9,7 @@ export const Wrapper = styled(Flex)`
 `;
 
 export const Container = styled(Flex)`
-  height: 50%;
+  height: 40%;
   flex-direction: column;
   justify-content: space-between;
   margin-top: 100px;
@@ -29,7 +29,7 @@ export const Text = styled(Flex)`
 
 export const StyledMenu = styled.nav`
   display: flex;
-  width: 300px;
+  width: 200px;
   background: rgba(0, 0, 0, 0.3);
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
   height: 100%;
@@ -42,7 +42,7 @@ export const StyledMenu = styled.nav`
   justify-content: center;
   
   @media (max-width: 576px) {
-      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
     }
 
   a {

@@ -8,14 +8,11 @@ export const Container = styled(Flex)`
   position: absolute;
   top: 5%;
   right: 2rem;
-  //width: 200px;
   cursor: pointer;
   z-index: 2;
-  //background:red;
-  // @media (max-width: 600px) {
-  //   display: ${props=>props.main || "none"}
-  // }
-  
+  @media (max-width: 480px) {
+    top: 5.4%;
+  }
 `;
 
 export const Text = styled(Flex)`
@@ -30,6 +27,10 @@ export const Logo = styled.img`
 	height: 100%;
 	width: 26px;
   margin-left: 6px;
+  @media (max-width: 480px) {
+    width: 22px;
+    margin-left: 2px;
+  }
 `
 
 export const Link = styled.a`

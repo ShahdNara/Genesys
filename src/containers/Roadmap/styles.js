@@ -160,13 +160,18 @@ export const BigText = styled(Flex)`
 	top: 5%;
 	z-index: 2;
 	line-height: 34px;
+
 	@media (max-width: 920px) {
 		font-size: 40px;
+	  }
+	@media (max-width: 480px) {
+	font-size: 36px;
 	}
-	// @media (max-width: 1000px) {
-	// 	top: 0;
-	// 	margin-left: 0px;
-	// }
+	@media (max-width: 430px) {
+	font-size: 30px;
+	top: 4.8%;
+	margin-left: 80px;
+	}
 `
 
 
