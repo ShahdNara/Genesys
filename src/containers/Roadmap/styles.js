@@ -163,4 +163,54 @@ export const BigText = styled(Flex)`
 	@media (max-width: 920px) {
 		font-size: 40px;
 	}
+	// @media (max-width: 1000px) {
+	// 	top: 0;
+	// 	margin-left: 0px;
+	// }
+`
+
+
+
+
+export const MobileContainer = styled(Flex)`
+	width: 100%;
+	height: 100vh;
+	overflow-y: scroll;
+	position: absolute;
+	scroll-behavior: smooth;
+	justify-content: center;
+	top: 15%;
+`
+
+export const Column = styled(Flex)`
+	flex-direction: column;
+`
+
+export const MobileWrapper = styled(Flex)`
+	flex-direction: column;
+	height: 100%;
+`
+export const MobileBox = styled(Flex)`
+	flex-direction: column;
+	border-radius: 5px;
+	width: 340px;
+	height: 150px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #3bc5cc;
+	background: rgba(66,155,184, 0.2);
+	box-shadow: 0 0 5px #3bc5cc;
+	padding: 17px;
+	margin-bottom: ${props=>props.last? "250px" : "0px"}
+`
+
+export const MidLine = styled(Flex)`
+	width: 3px;
+	height: 140px;
+	background: #3bc5cc;
+	box-shadow: 0 0 2px #3bc5cc;
+	border-radius: 5px;
+	align-self: center;
+	z-index: -2;
+	display: ${props=>props.invisible? "none" : ""}
 `
