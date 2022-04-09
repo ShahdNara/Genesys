@@ -7,7 +7,7 @@ export const Container = styled(Flex)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url(${bg});
+  //background-image: url(${bg});
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

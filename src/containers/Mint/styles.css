@@ -103,6 +103,9 @@
   .mouse {
     display: none;
   }
+  .m_scroll_arrows {
+    display: none;
+  }
 }
 
 

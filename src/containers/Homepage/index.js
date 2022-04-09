@@ -12,6 +12,13 @@ import { Team } from "../Team";
 import AudioPlayer from "../../components/AudioPlayer";
 import Socials from "../../components/Socials";
 import TrackpadDetector from "../../components/TrackpadDetector";
+import useWindowDimensions from '../../components/useWindowDimensions';
+import bg from "../../media/bg3.png";
+import MintBg from "./bgs/mint_mobile.png";
+import SynposisBg from "./bgs/synposis_mobile.png";
+import CharactersBg from "./bgs/characters_mobile.png";
+import TeamBg from "./bgs/team_mobile.png";
+
 
 export const TRACKPAD_SENS = 25
 export const MOUSE_SENS = 5
@@ -21,6 +28,7 @@ function HomePage() {
     const [tab, setTab] = useState(0);
     const [scrollCount, setScrollCount] = useState(0);
     const isTrackpad = TrackpadDetector();
+    const { height, width } = useWindowDimensions();
 
     const handleClick  = (e) => {
         setTab(e);
@@ -33,6 +41,15 @@ function HomePage() {
         3: <Characters next={() => setTab(4)} back={() => setTab(2)} isTrackpad={isTrackpad} trackpad_sens={TRACKPAD_SENS} mouse_sens={MOUSE_SENS}/>,
         4: <Roadmap next={() => setTab(5)} back={() => setTab(3)} isTrackpad={isTrackpad} trackpad_sens={TRACKPAD_SENS} mouse_sens={MOUSE_SENS}/>,
         5: <Team />
+    }
+
+    const bgs = {
+        0: MintBg,
+        1: SynposisBg,
+        2: bg,
+        3: CharactersBg,
+        4: bg,
+        5: TeamBg
     }
 
     const onWheel = (e) => {
@@ -51,33 +68,45 @@ function HomePage() {
         }
     }
 
-    
-    if(tab != 6) {
+    if (width >= 820) {
+        if(tab != 6) {
+            return(
+                <Container onWheel={onWheel} onScroll={onWheel} style={{backgroundImage: `url(${bg})`}}>
+                    <Socials tab={tab}/>
+                    <Navbar onClick={handleClick}/>
+                    <Section>
+                        {sections[tab]}
+                    </Section>
+                    <PlanetWrapper>
+                        <Scene tab={tab} />
+                    </PlanetWrapper>
+                    <AudioPlayer/>
+                </Container>
+            ) 
+        }
+        else { 
+                return(
+                <Container style={{backgroundImage: `url(${bg})`}}>
+                    <Socials />
+                    <Navbar onClick={handleClick}/>
+                    <Section>
+                        <FAQ />
+                    </Section>
+                </Container>)
+            }
+    } else {
         return(
-            <Container onWheel={onWheel} onScroll={onWheel}>
+            <Container onWheel={onWheel} onScroll={onWheel} style={{backgroundImage: `url(${bgs[tab]})`, backgroundPosition: "center"}}>
                 <Socials tab={tab}/>
                 <Navbar onClick={handleClick}/>
                 <Section>
                     {sections[tab]}
                 </Section>
-                <PlanetWrapper>
-                    <Scene tab={tab} />
-                </PlanetWrapper>
                 <AudioPlayer/>
             </Container>
-        ) 
+        )
     }
-    else { 
-            return(
-            <Container>
-                <Socials />
-                <Navbar onClick={handleClick}/>
-                <Section>
-                    <FAQ />
-                </Section>
-            </Container>)
-        }
-    
+      
 }
 
 export default HomePage;
