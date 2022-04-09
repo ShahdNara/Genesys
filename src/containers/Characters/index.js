@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Container, VerticalLine, Text, Wrapper, Box, Title, Circle, Icon, Content, ScrollWrapper, Picture, BigText } from "./styles";
+import { Div ,MobileContainer, Column } from "./styles";
 import Androids from "./icon/androids.png"
 import Centurions from "./icon/centurions.png"
 import Council from "./icon/council.png"
@@ -42,7 +43,7 @@ export const Characters = (props) => {
                         <Title>{props.title}</Title>
                         <Icon src={props.icon}/>
                     </Picture>
-                    <Box>
+                    <Box last={props.last}>
                         <Text color={props.color}>{props.text}</Text>
                     </Box>
                 </Wrapper>)
@@ -72,7 +73,8 @@ export const Characters = (props) => {
         }
     }
 
-    return(
+    if (width >= 750) {
+        return(        
         <ScrollWrapper onWheelCapture={onScroll} ref={ref}>
             <BigText>Characters</BigText>
             <Container>
@@ -90,6 +92,25 @@ export const Characters = (props) => {
                     <Character icon={Council} isLeft={true} color="white" title="The High Council" text="The rulers of GENYSES. Composed of 7 members and led by the Councillor Supreme, the High Council wields near absolute power on GENYSES. Members are appointed by and from the Assembly, the elite legislative body of GENYSES."/>
                 </Content>
             </Container>
-        </ScrollWrapper>
-    )    
+        </ScrollWrapper>)
+    } else {   
+        return(
+        <Div>
+            <BigText>Characters</BigText>
+            <MobileContainer>
+                <Column>       
+                    <VerticalLine>
+                        <Circle color="#6C469D"/>
+                        <Circle color="#FA7523"/>
+                        <Circle color="#6F3B45"/>
+                        <Circle color="#B7AA8E"/>
+                    </VerticalLine>       
+                    <Character icon={Androids} color="white" title="The Androids" text="The labor class of GENYSES. The androids are relegated to the lowest rungs of Martian society and programmed not to disobey. However, for the select few found and freed by The Legion, reprogramming is the path to freedom through resistance."/>
+                    <Character icon={Legion} isLeft={true} color="white" title="The Legion" text="The resistance of freed androids. After their initial failed rebellion, the group has since gone underground and taken refuge in the few habitable places left on Earth, biding their time before moving against GENYSES."/>
+                    <Character icon={Centurions} color="white" title="The Centurions" text="The military force of GENYSES.  Designed from birth to have superhuman levels of strength, speed, and endurance, the Centurions are genetically enhanced supersoldiers that have made Mars feared throughout the solar system."/>
+                    <Character icon={Council} isLeft={true} color="white" title="The High Council" text="The rulers of GENYSES. Composed of 7 members and led by the Councillor Supreme, the High Council wields near absolute power on GENYSES. Members are appointed by and from the Assembly, the elite legislative body of GENYSES." last/>
+                </Column>
+            </MobileContainer>
+        </Div>)    
+        }
 }

@@ -10,6 +10,7 @@ export const ScrollWrapper = styled(Flex)`
 	scroll-behavior: smooth;
     justify-content: right;
     z-index: 1;
+    top: 13%;
     @media (max-width: 800px) {
         width: 800px;
         position: fixed;
@@ -23,6 +24,7 @@ export const Container = styled(Flex)`
 	width: 45%;
 	height: 100%;
     flex-direction: row;
+    margin-bottom: 290px;
     @media (max-width: 1700px) {
         width: 53%;
     }
@@ -31,11 +33,11 @@ export const Container = styled(Flex)`
     }
     @media (max-width: 1400px) {
         width: 80%;
-        margin-top: 110px;
+        //margin-top: 110px;
     }
     @media (max-width: 1020px) {
         width: 100%;
-        margin-top: 110px;
+        //margin-top: 110px;
     }
     @media (max-width: 800px) {
         width: 800px;
@@ -94,6 +96,7 @@ export const Wrapper = styled(Flex)`
         padding-bottom: 30px;
         padding-top: 0px;
     }
+
 `
 export const Row = styled(Flex)`
 	flex-direction: row;
@@ -110,6 +113,7 @@ export const Box = styled(Flex)`
     @media (max-width: 800px) {
         width: 310px;
     }
+    margin-bottom: ${props=>props.last? "220px" : "0px"}
 `
 export const Title = styled.div`
 	font-family: Polaris;
@@ -122,10 +126,7 @@ export const Text = styled.div`
 	font-size: 23px;
 	color: ${props => props.color ? props.color : "white"};
     align-self: center;
-    // @media (max-width: 760px) {
-    //     font-size: 20px;
-    //     right: 1%;
-    // }
+
 `
 
 export const Circle = styled(Flex)`
@@ -167,7 +168,31 @@ export const BigText = styled(Flex)`
     @media (max-width: 920px) {
         font-size: 35px;
     }
-    @media (max-width: 750px) {
-        display: none;
-    }
+
+`
+
+
+export const MobileContainer = styled(Flex)`
+	width: 100%;
+	height: 100vh;
+	overflow-y: scroll;
+	position: absolute;
+	scroll-behavior: smooth;
+	justify-content: center;
+	top: 15%;
+`
+
+export const Column = styled(Flex)`
+	flex-direction: column;
+`
+
+export const MobileWrapper = styled(Flex)`
+	flex-direction: column;
+	height: 100%;
+`
+
+export const Div = styled(Flex)`
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
 `
