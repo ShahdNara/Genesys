@@ -87,9 +87,21 @@ export const Subtitle = styled(Flex)`
 
 export const BeginMobile = styled(Flex)`
   color: white;
-  font-size: 34px;
+  font-size: 30px;
   font-family: 'Agency FB';
   cursor: pointer;
+  border-style: solid;
+	border-width: 1px;
+	border-color: #3bc5cc;
+  border-radius: 10px;
+	background: #0D1F25;
+  height: 50px;
+  width: 130px;
+  padding: 10px;
+  //align-self: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
   @media (min-width: 900px) {
     display: none;
   }

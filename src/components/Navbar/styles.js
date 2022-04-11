@@ -48,7 +48,9 @@ export const Banner = styled.a`
   align-items: center;
   justify-content: center;
   display: ${props=> !props.visible && "none"};
-
+  @media (min-width: 820px) {
+    display: none;
+  }
 `;
 
 export const Announcement = styled(Flex)`
