@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Wrapper, Container, Text, StyledMenu, StyledBurger } from "./styles";
+import { Wrapper, Container, Text, StyledMenu, StyledBurger, Banner, Announcement } from "./styles";
 
 
 const Burger = ({ open, setOpen }) => {
@@ -40,12 +40,14 @@ const Navbar = props => {
     }
 
     const node = useRef();
+    console.log(props.banner)
     return (
       <Wrapper>
         <div ref={node}>
           <Burger open={open} setOpen={setOpen} />
           <Menu open={open} setOpen={setOpen} />
         </div>
+        <Banner visible={props.banner} href="https://discord.gg/genyses" target="_blank" rel="noopener noreferrer"><Announcement>JOIN THE DISCORD NOW</Announcement></Banner>
       </Wrapper>
     )
 }

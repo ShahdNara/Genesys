@@ -184,7 +184,7 @@ export const MobileContainer = styled(Flex)`
 	position: absolute;
 	scroll-behavior: smooth;
 	justify-content: center;
-	top: 15%;
+	top: 20%;
 `
 
 export const Column = styled(Flex)`

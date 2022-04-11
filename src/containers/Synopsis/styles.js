@@ -6,6 +6,7 @@ export const Container = styled(Flex)`
   width: 100%;
   flex-direction: column;
   overflow: hidden;
+  top: 15%;
 `;
 
 export const Title = styled.div`

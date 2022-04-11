@@ -75,7 +75,7 @@ function HomePage() {
             return(
                 <Container onWheel={onWheel} onScroll={onWheel} style={{backgroundImage: `url(${bg})`}}>
                     <Socials tab={tab}/>
-                    <Navbar onClick={handleClick} ref={childRef} openMenu={open}/>
+                    <Navbar onClick={handleClick} ref={childRef} openMenu={open} banner={tab!=0}/>
                     <Section> 
                         {sections[tab]}
                     </Section>
@@ -90,7 +90,7 @@ function HomePage() {
                 return(
                 <Container style={{backgroundImage: `url(${bg})`}}>
                     <Socials />
-                    <Navbar onClick={handleClick} ref={childRef} openMenu={open}/>
+                    <Navbar onClick={handleClick} ref={childRef} openMenu={open} banner={tab!=0}/>
                     <Section>
                         <FAQ />
                     </Section>
@@ -100,7 +100,7 @@ function HomePage() {
         return(
             <Container onWheel={onWheel} onScroll={onWheel} style={{backgroundImage: `url(${bgs[tab]})`, backgroundPosition: "center"}}>
                 <Socials tab={tab}/>
-                <Navbar onClick={handleClick} ref={childRef} openMenu={open}/>
+                <Navbar onClick={handleClick} ref={childRef} openMenu={open} banner={tab!=0}/>
                 <Section>
                     {sections[tab]}
                 </Section>

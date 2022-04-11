@@ -26,6 +26,39 @@ export const Text = styled(Flex)`
   font-height: 10px;
 `;
 
+export const Banner = styled.a`
+  display: flex;
+  text-decoration: none;
+  color: #e2e2e2;
+  font-size: 26px;
+  font-family: 'Agency FB';
+  cursor: pointer;
+  position: absolute;
+  top: 12%;
+  &:hover {
+    color: #E3DDA8;
+  }
+  font-height: 10px;
+  width: 100%;
+  padding: 5px;
+  border-style: solid;
+	border-width: 1px 0px 1px 0px;
+	border-color: #3bc5cc;
+	background: #0D1F25;
+  align-items: center;
+  justify-content: center;
+  display: ${props=> !props.visible && "none"};
+
+`;
+
+export const Announcement = styled(Flex)`
+  animation: blinker 2s linear infinite;
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+`
 
 export const StyledMenu = styled.nav`
   display: flex;
@@ -40,7 +73,7 @@ export const StyledMenu = styled.nav`
   left: 0;
   transition: transform 0.3s ease-in-out;
   justify-content: center;
-  
+  z-index: 9;
   @media (max-width: 576px) {
       background: rgba(0, 0, 0, 0.8);
     }
