@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Wrapper, Container, Text, StyledMenu, StyledBurger } from "./styles";
 
 
@@ -14,8 +14,11 @@ const Burger = ({ open, setOpen }) => {
 
 const Navbar = props => {
     const [open, setOpen] = useState(false);
-    const [tab, setTab] = useState(0);
 
+    useEffect(() => {
+      setOpen(props.openMenu)
+    }, [props.openMenu]);
+    
     const handleOnclick = tab => {
         props.onClick(tab)
         setOpen(false)

@@ -27,15 +27,17 @@ function HomePage() {
   
     const [tab, setTab] = useState(0);
     const [scrollCount, setScrollCount] = useState(0);
+    const [open, setOpen] = useState(false);
     const isTrackpad = TrackpadDetector();
     const { height, width } = useWindowDimensions();
+    const childRef = useRef();
 
     const handleClick  = (e) => {
         setTab(e);
     }
 
     const sections = {
-        0: <Mint/>,
+        0: <Mint openMenu={() => setOpen(!open)}/>,
         1: <Synopsis/>,
         2: <Overview/>,
         3: <Characters next={() => setTab(4)} back={() => setTab(2)} isTrackpad={isTrackpad} trackpad_sens={TRACKPAD_SENS} mouse_sens={MOUSE_SENS}/>,
@@ -73,8 +75,8 @@ function HomePage() {
             return(
                 <Container onWheel={onWheel} onScroll={onWheel} style={{backgroundImage: `url(${bg})`}}>
                     <Socials tab={tab}/>
-                    <Navbar onClick={handleClick}/>
-                    <Section>
+                    <Navbar onClick={handleClick} ref={childRef} openMenu={open}/>
+                    <Section> 
                         {sections[tab]}
                     </Section>
                     <PlanetWrapper>
@@ -88,7 +90,7 @@ function HomePage() {
                 return(
                 <Container style={{backgroundImage: `url(${bg})`}}>
                     <Socials />
-                    <Navbar onClick={handleClick}/>
+                    <Navbar onClick={handleClick} ref={childRef} openMenu={open}/>
                     <Section>
                         <FAQ />
                     </Section>
@@ -98,7 +100,7 @@ function HomePage() {
         return(
             <Container onWheel={onWheel} onScroll={onWheel} style={{backgroundImage: `url(${bgs[tab]})`, backgroundPosition: "center"}}>
                 <Socials tab={tab}/>
-                <Navbar onClick={handleClick}/>
+                <Navbar onClick={handleClick} ref={childRef} openMenu={open}/>
                 <Section>
                     {sections[tab]}
                 </Section>
