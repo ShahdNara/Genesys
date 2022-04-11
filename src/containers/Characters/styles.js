@@ -168,14 +168,17 @@ export const BigText = styled(Flex)`
     @media (max-width: 920px) {
         font-size: 35px;
       }
-      @media (max-width: 480px) {
+      @media (max-width: 500px) {
         font-size: 30px;
       }
-      @media (max-width: 430px) {
-        font-size: 27px;
+      @media (max-width: 445px) {
+        font-size: 25px;
         top: 4.8%;
         margin-left: 80px;
       }
+    //   @media (max-width: 480px) {
+    //     font-size: 30px;
+    //   }
 
 `
 
