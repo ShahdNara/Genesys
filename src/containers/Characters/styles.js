@@ -176,10 +176,9 @@ export const BigText = styled(Flex)`
         top: 4.8%;
         margin-left: 80px;
       }
-    //   @media (max-width: 480px) {
-    //     font-size: 30px;
-    //   }
-
+      @media (max-width: 393px) {
+        font-size: 23px;
+      }
 `
 
 
