@@ -3,7 +3,7 @@ import { Container, Line, CircleRow, Circle, HorizontalWrapper, HorizontalWrappe
 import { MobileContainer, Column, MobileWrapper, MobileBox, MidLine } from "./styles"
 import useWindowDimensions from '../../components/useWindowDimensions';
 
-const max_scroll = 10
+const max_scroll = 9
 
 const Roadmap = (props) => {
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -25,7 +25,7 @@ const Roadmap = (props) => {
         if (scrollCount >= sensitivity) { //scrolling sensitivity
             if (e.nativeEvent.wheelDelta < 0) {
                 if (scrollPosition < max_scroll) {
-                    scroll(650)
+                    scroll(760)
                     setScrollPosition(scrollPosition+1)
                     
                 } else {
@@ -33,7 +33,7 @@ const Roadmap = (props) => {
                 }
             } else if (scrollPosition > 0) {
                 if (scrollPosition < max_scroll) {
-                    scroll(-650)
+                    scroll(-760)
                 }
                 setScrollPosition(scrollPosition-1)
                 
@@ -84,7 +84,7 @@ const Roadmap = (props) => {
                             <Step flex={1} title="POWER TRIP" text="The introduction of exclusive membership rewards for holders of THE HIGH COUNCIL collection"/>
                             <Step flex={1} title="REDEMPTION" text="GENYSES Comics - Issue I, Vol. I released"/>
                             <Step flex={1} title="SINGULARITY" text="GENYSES - Season I, Episode I released"/>
-                            <Step flex={2} title="GENESIS" text="Our ecosystem expands into a DAO that takes control over the story"/>
+                            {/* <Step flex={2} title="GENESIS" text="Our ecosystem expands into a DAO that takes control over the story"/> */}
 
                             <Circle invisible/>
                         </CircleRow>
@@ -92,7 +92,7 @@ const Roadmap = (props) => {
                 </HorizontalWrapper>
                 <HorizontalWrapper2 onWheelCapture={onWheel} ref={ref2}>
                     <Container2>
-                        <Line width={scrollPosition*(4500/6.63)} />  
+                        <Line width={scrollPosition*(4720/6)} />  
                         <ThinLine width={10000} />
                     </Container2>
                 </HorizontalWrapper2>
@@ -113,8 +113,7 @@ const Roadmap = (props) => {
                         <MobileStep flex={1} title="ANARCHY" text="THE HIGH COUNCIL collection drops"/>
                         <MobileStep flex={1} title="POWER TRIP" text="The introduction of exclusive membership rewards for holders of THE HIGH COUNCIL collection"/>
                         <MobileStep flex={1} title="REDEMPTION" text="GENYSES Comics - Issue I, Vol. I released"/>
-                        <MobileStep flex={1} title="SINGULARITY" text="GENYSES - Season I, Episode I released"/>
-                        <MobileStep flex={2} title="GENESIS" text="Our ecosystem expands into a DAO that takes control over the story" last/>
+                        <MobileStep flex={1} title="SINGULARITY" text="GENYSES - Season I, Episode I released" last/>
                     </Column>
                 </MobileContainer>
             </Div>

@@ -7,11 +7,14 @@ export const Container = styled(Flex)`
   justify-content:center;
   flex-direction: column;
   overflow: hidden;
-  @media (max-height: 810px) {
+  @media (max-height: 850px) {
     padding-top: 50px;
   }
-  @media (max-height: 730px) {
+  @media (max-height: 768px) {
     padding-top: 90px;
+  }
+  @media (max-height: 710px) {
+    padding-top: 140px;
   }
 `;
 

@@ -37,7 +37,7 @@ export const Container2 = styled(Flex)`
 
 export const CircleRow = styled(Flex)`
 	justify-content: space-between;
-	width: 7500px;
+	width: 7900px;
 	height: 100%;
 `
 
@@ -108,7 +108,7 @@ export const Icon = styled.img`
 export const Line = styled(Flex)`
   height: 5px;
   width: ${props => props.width};
-	max-width: 6800px;
+	max-width: 7300px;
   background: #3bc5cc;
   transition-property: width;
   transition-duration: 0.2s;
