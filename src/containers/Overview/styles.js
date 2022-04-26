@@ -7,6 +7,12 @@ export const Container = styled(Flex)`
   justify-content:center;
   flex-direction: column;
   overflow: hidden;
+  @media (max-height: 810px) {
+    padding-top: 50px;
+  }
+  @media (max-height: 730px) {
+    padding-top: 90px;
+  }
 `;
 
 export const Text = styled.div`
@@ -21,13 +27,13 @@ export const Text = styled.div`
     font-size: 35px;
     text-align: justify;
   }
-  @media (max-width: 640px) {
+  @media (max-width: 700px) {
     font-size: 32px;
   }
-  @media (max-width: 540px) {
+  @media (max-width: 580px) {
     font-size: 30px;
   }
-  @media (max-width: 470px) {
+  @media (max-width: 540px) {
     font-size: 25px;
   }
   @media (max-height: 670px) {
