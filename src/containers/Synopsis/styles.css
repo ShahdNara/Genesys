@@ -1,0 +1,92 @@
+/* body {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+  } */
+  
+  .fade {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    top: -25px;
+    background-image: linear-gradient(0deg, transparent, black 85%);
+    z-index: 1;
+  }
+  
+  .star-wars {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 800px;
+    color: white;
+    font-family: 'Agency FB', arial;
+    font-size: 500%;
+    font-weight: 600;
+    letter-spacing: 6px;
+    line-height: 150%;
+    perspective: 500px;
+    text-align: justify;
+  }
+
+  @media (max-width: 920px) {
+    .star-wars {
+      font-size: 200%;
+      padding: 10%;
+      text-align: left;
+    }
+  }
+  @media (max-width: 500px) {
+    .star-wars {
+      font-size: 150%;
+      padding: 10%;
+    }
+  }
+
+
+  .crawl {
+    position: relative;
+    top: 99999px;
+    transform-origin: 50% 100%;
+    animation: crawl 60s linear;
+  }
+
+  @media (max-width: 920px) {
+    .crawl {
+      position: relative;
+      top: 99999px;
+      transform-origin: 50% 100%;
+      animation: crawl2 130s linear;
+    }
+  }
+  .crawl > .title {
+    font-size: 90%;
+    text-align: center;
+  }
+  
+  .crawl > .title h1 {
+    margin: 0 0 0px;
+    text-transform: uppercase;
+  }
+  
+  @keyframes crawl {
+      0% {
+      top: -100px;
+      transform: rotateX(20deg)  translateZ(0);
+    }
+      100% { 
+      top: -6000px;
+      transform: rotateX(20deg) translateZ(-2500px);
+    }
+  }
+
+  @keyframes crawl2 {
+    0% {
+    top: -100px;
+    transform: rotateX(0deg)  translateZ(0);
+  }
+    100% { 
+    top: -6000px;
+    transform: rotateX(0deg) translateZ(0);
+  }
+}

@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { Flex, Box, Image } from "reflexbox/styled-components";
-import bg from "../../media/bg1.png";
+import bg from "../../media/bg3.png";
 
 export const Container = styled(Flex)`
   height: 100vh;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url(${bg});
+  //background-image: url(${bg});
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -31,8 +31,8 @@ export const PlanetWrapper = styled.div`
 
 export const Section = styled(Flex)`
   align-items: center;
-  height: 80%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
   z-index: 1;
   flex-direction: column;
   justify-content: center;

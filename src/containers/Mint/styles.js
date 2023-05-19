@@ -2,24 +2,46 @@ import styled from "styled-components";
 import { Flex, Box, Image } from "reflexbox/styled-components";
 
 export const Container = styled(Flex)`
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-direction: column;
-  // margin-bottom: 170px;
-  // background-color: red;
-  height: 100%;
+  //height: 90vh;
+  overflow: hidden;
+  //background: red;
+  bottom: 9%;
+  position: absolute;
+  @media (max-width: 650px) {
+    justify-content: center;
+  }
+  @media (max-height: 800px) {
+    bottom: 7%;
+  }
+  @media (max-height: 500px) {
+    bottom: 1%;
+  }
 `;
 
 export const Genyses = styled(Flex)`
   font-family: Polaris;
   font-size: 100px;
   color: white;
-  text-shadow: 2px 2px 9px red;
   z-index: 2;
-  align-self: center;
-  height: 80%;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
+  top: 40%;
+  align-items: flex-end;
+  @media (max-width: 1000px), (max-height: 800px) {
+    font-size: 90px;
+  }
+  @media (max-width: 800px), (max-height: 750px) {
+    font-size: 80px;
+  }
+  @media (max-width: 600px), (max-height: 650px) {
+    font-size: 70px;
+  }
+  @media (max-width: 450px), (max-height: 580px) {
+    font-size: 55px;
+  }
+  @media (max-height: 500px) {
+    font-size: 48px;
+  }
 `
 export const Button = styled.button`
   width: 50%;
@@ -29,15 +51,14 @@ export const Button = styled.button`
 
 export const ArrowsWrapper = styled(Flex)`
   align-self: center;
-  width: 100%;
-  height: 20%;
+  //width: 30%;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column;  
+  //padding-top: 20px;
 `
 export const Arrows = styled.div`
-
   position: relative;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 export const Scroll = styled(Flex)`
@@ -53,3 +74,35 @@ export const Scroll = styled(Flex)`
 export const Wrapper = styled(Flex)`
   position: relative;
 `;
+
+export const Subtitle = styled(Flex)`
+  font-family: Polaris;
+  font-size: 20px;
+  color: rgba(255,255,255,0.6);
+  z-index: 2;
+  align-self: center;
+  margin-bottom: 30px;
+`;
+
+
+export const BeginMobile = styled(Flex)`
+  color: white;
+  font-size: 30px;
+  font-family: 'Agency FB';
+  cursor: pointer;
+  border-style: solid;
+	border-width: 1px;
+	border-color: #3bc5cc;
+  border-radius: 10px;
+	background: #0D1F25;
+  height: 50px;
+  width: 130px;
+  padding: 10px;
+  //align-self: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  @media (min-width: 900px) {
+    display: none;
+  }
+`

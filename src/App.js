@@ -1,8 +1,6 @@
-import logo from './logo.svg';
 import HomePage from "./containers/Homepage";
 import WebFont from "webfontloader";
 import StarfieldAnimation from 'react-starfield-animation'
-import { Wrapper } from "./styles"
 
 WebFont.load({
   google: {
@@ -19,7 +17,7 @@ function App() {
   return (
     <div>
       <StarfieldAnimation
-                numParticles={0}
+                numParticles={10}
                 style={{
                     position: 'absolute',
                     zIndex: 0,
